@@ -49,12 +49,12 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #7c3aed;
+    background: #6366f1;
     border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #a855f7;
+    background: #818cf8;
 }
 
 @layer base {

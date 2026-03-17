@@ -10,7 +10,7 @@ export const companyInfo = {
   coverage: "Cobertura en toda la comarca de la Comunidad Valenciana",
   rating: 2.6,
   reviews: 5,
-  logo: "https://customer-assets.emergentagent.com/job_1164a25c-f309-4a1d-91f4-06d0d0f24c05/artifacts/9nztp1h3_Copia%20de%20Cartel%20Collage%20texto%20blanco%20e%20i%CC%81ndigo%20sobre%20foto%20Concierto.png"
+  logo: "https://customer-assets.emergentagent.com/job_audiomix-stage/artifacts/bxap1zub_Copia%20de%20Cartel%20Collage%20texto%20blanco%20e%20i%CC%81ndigo%20sobre%20foto%20Concierto-4.png"
 };
 
 export const services = [
