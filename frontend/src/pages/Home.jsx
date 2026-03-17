@@ -3,42 +3,9 @@ import { Button } from '../components/ui/button';
 import { ServiceCard } from '../components/ServiceCard';
 import { ContactForm } from '../components/ContactForm';
 import { companyInfo, services, portfolioImages } from '../data/mock';
-import { useEffect, useState } from 'react';
+import { CustomCursor } from '../components/CustomCursor';
 
 const Home = () => {
-  const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
-  const [particles, setParticles] = useState([]);
-
-  useEffect(() => {
-    const handleMouseMove = (e) => {
-      setCursorPos({ x: e.clientX, y: e.clientY });
-      
-      // Create particle on mouse move
-      const particle = {
-        id: Date.now() + Math.random(),
-        x: e.clientX,
-        y: e.clientY,
-        size: Math.random() * 8 + 4,
-        opacity: 1
-      };
-      
-      setParticles(prev => [...prev, particle].slice(-20)); // Keep last 20 particles
-    };
-
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, []);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setParticles(prev => prev.filter(p => p.opacity > 0).map(p => ({
-        ...p,
-        opacity: p.opacity - 0.05
-      })));
-    }, 50);
-
-    return () => clearInterval(timer);
-  }, []);
   const handleCallClick = () => {
     window.location.href = `tel:${companyInfo.phone}`;
   };
@@ -48,35 +15,9 @@ const Home = () => {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white cursor-none">
-      {/* Custom Cursor with Particles */}
-      <div 
-        className="custom-cursor fixed pointer-events-none z-[9999]"
-        style={{ 
-          left: `${cursorPos.x}px`, 
-          top: `${cursorPos.y}px`,
-          transform: 'translate(-50%, -50%)'
-        }}
-      >
-        <div className="w-4 h-4 bg-white rounded-full opacity-80 blur-sm"></div>
-      </div>
-      
-      {/* Particle Trail */}
-      {particles.map(particle => (
-        <div
-          key={particle.id}
-          className="fixed pointer-events-none z-[9998] rounded-full bg-white blur-sm"
-          style={{
-            left: `${particle.x}px`,
-            top: `${particle.y}px`,
-            width: `${particle.size}px`,
-            height: `${particle.size}px`,
-            opacity: particle.opacity,
-            transform: 'translate(-50%, -50%)',
-            transition: 'opacity 0.3s ease-out'
-          }}
-        />
-      ))}
+    <div className="min-h-screen bg-black text-white">
+      {/* Custom Cursor Effect */}
+      <CustomCursor />
 
       {/* Logo in top left corner */}
       <div className="fixed top-6 left-6 z-50 cursor-pointer">
