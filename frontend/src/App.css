@@ -1,0 +1,83 @@
+/* Audiomix Producciones Custom Styles */
+
+.App {
+    min-height: 100vh;
+    background: #000000;
+}
+
+/* Hero section effects */
+.hero-section {
+    position: relative;
+    background: linear-gradient(135deg, #000000 0%, #18181b 50%, #000000 100%);
+}
+
+/* Service card hover effects */
+.service-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(124, 58, 237, 0.1), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 0;
+}
+
+.service-card:hover::before {
+    opacity: 1;
+}
+
+/* Floating button animation */
+.floating-call-btn {
+    animation: pulse-glow 2s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+    0%, 100% {
+        box-shadow: 0 0 30px rgba(168, 85, 247, 0.6);
+    }
+    50% {
+        box-shadow: 0 0 50px rgba(168, 85, 247, 0.9);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .floating-call-btn {
+        bottom: 1rem;
+        right: 1rem;
+        padding: 0.75rem 1rem;
+        font-size: 0.875rem;
+    }
+}
+
+/* Smooth transitions for interactive elements */
+button,
+a,
+.service-card,
+input,
+textarea,
+select {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+}
+
+/* Focus states with purple glow */
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: #a855f7;
+    box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.2);
+}
+
+/* Image hover effects */
+img {
+    transition: transform 0.5s ease;
+}
