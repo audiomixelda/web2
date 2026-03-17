@@ -3,8 +3,42 @@ import { Button } from '../components/ui/button';
 import { ServiceCard } from '../components/ServiceCard';
 import { ContactForm } from '../components/ContactForm';
 import { companyInfo, services, portfolioImages } from '../data/mock';
+import { useEffect, useState } from 'react';
 
 const Home = () => {
+  const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
+  const [particles, setParticles] = useState([]);
+
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      setCursorPos({ x: e.clientX, y: e.clientY });
+      
+      // Create particle on mouse move
+      const particle = {
+        id: Date.now() + Math.random(),
+        x: e.clientX,
+        y: e.clientY,
+        size: Math.random() * 8 + 4,
+        opacity: 1
+      };
+      
+      setParticles(prev => [...prev, particle].slice(-20)); // Keep last 20 particles
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setParticles(prev => prev.filter(p => p.opacity > 0).map(p => ({
+        ...p,
+        opacity: p.opacity - 0.05
+      })));
+    }, 50);
+
+    return () => clearInterval(timer);
+  }, []);
   const handleCallClick = () => {
     window.location.href = `tel:${companyInfo.phone}`;
   };
@@ -14,20 +48,49 @@ const Home = () => {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-black text-white cursor-none">
+      {/* Custom Cursor with Particles */}
+      <div 
+        className="custom-cursor fixed pointer-events-none z-[9999]"
+        style={{ 
+          left: `${cursorPos.x}px`, 
+          top: `${cursorPos.y}px`,
+          transform: 'translate(-50%, -50%)'
+        }}
+      >
+        <div className="w-4 h-4 bg-white rounded-full opacity-80 blur-sm"></div>
+      </div>
+      
+      {/* Particle Trail */}
+      {particles.map(particle => (
+        <div
+          key={particle.id}
+          className="fixed pointer-events-none z-[9998] rounded-full bg-white blur-sm"
+          style={{
+            left: `${particle.x}px`,
+            top: `${particle.y}px`,
+            width: `${particle.size}px`,
+            height: `${particle.size}px`,
+            opacity: particle.opacity,
+            transform: 'translate(-50%, -50%)',
+            transition: 'opacity 0.3s ease-out'
+          }}
+        />
+      ))}
+
       {/* Logo in top left corner */}
-      <div className="fixed top-6 left-6 z-50">
+      <div className="fixed top-6 left-6 z-50 cursor-pointer">
         <img 
           src={companyInfo.logo} 
           alt="Audiomix Logo" 
-          className="w-16 h-16 drop-shadow-[0_0_15px_rgba(99,102,241,0.5)]"
+          className="w-24 h-24 drop-shadow-[0_0_20px_rgba(168,85,247,0.7)] hover:scale-110 transition-transform duration-300"
         />
       </div>
 
       {/* Floating Call Button */}
       <a
         href={`tel:${companyInfo.phone}`}
-        className="floating-call-btn fixed bottom-6 right-6 z-50 bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-700 hover:to-blue-700 text-white font-bold py-4 px-6 rounded-full shadow-[0_0_30px_rgba(99,102,241,0.6)] hover:shadow-[0_0_40px_rgba(99,102,241,0.9)] transition-all duration-300 flex items-center gap-2 animate-pulse hover:animate-none hover:scale-110"
+        className="floating-call-btn fixed bottom-6 right-6 z-50 bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white font-bold py-4 px-6 rounded-full shadow-[0_0_30px_rgba(168,85,247,0.6)] hover:shadow-[0_0_40px_rgba(168,85,247,0.9)] transition-all duration-300 flex items-center gap-2 animate-pulse hover:animate-none hover:scale-110 cursor-pointer"
       >
         <Phone className="w-5 h-5" />
         <span>Llamar Ahora</span>
@@ -37,15 +100,15 @@ const Home = () => {
       <section className="hero-section relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Animated background effects */}
         <div className="absolute inset-0 bg-gradient-to-br from-black via-zinc-900 to-black">
-          <div className="absolute top-20 left-20 w-96 h-96 bg-indigo-600/20 rounded-full blur-[120px] animate-pulse"></div>
-          <div className="absolute bottom-20 right-20 w-96 h-96 bg-blue-800/20 rounded-full blur-[120px] animate-pulse delay-1000"></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-indigo-700/10 rounded-full blur-[150px]"></div>
+          <div className="absolute top-20 left-20 w-96 h-96 bg-purple-600/20 rounded-full blur-[120px] animate-pulse"></div>
+          <div className="absolute bottom-20 right-20 w-96 h-96 bg-purple-800/20 rounded-full blur-[120px] animate-pulse delay-1000"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-purple-700/10 rounded-full blur-[150px]"></div>
         </div>
 
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center max-w-5xl mx-auto">
             {/* Main Company Name - Large */}
-            <h1 className="text-6xl md:text-8xl font-black mb-6 bg-gradient-to-r from-white via-indigo-200 to-indigo-400 bg-clip-text text-transparent leading-tight">
+            <h1 className="text-6xl md:text-8xl font-black mb-6 bg-gradient-to-r from-white via-purple-200 to-purple-400 bg-clip-text text-transparent leading-tight">
               Audiomix Producciones
             </h1>
             
@@ -53,7 +116,7 @@ const Home = () => {
               Sonido, iluminación y equipos profesionales para eventos
             </p>
 
-            <p className="text-lg md:text-xl text-indigo-400 mb-10 font-semibold">
+            <p className="text-lg md:text-xl text-purple-400 mb-10 font-semibold">
               {companyInfo.coverage}
             </p>
 
@@ -61,7 +124,7 @@ const Home = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Button
                 onClick={handleCallClick}
-                className="bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-700 hover:to-blue-700 text-white font-bold py-7 px-10 rounded-full text-lg shadow-[0_0_25px_rgba(99,102,241,0.5)] hover:shadow-[0_0_35px_rgba(99,102,241,0.8)] transition-all duration-300 hover:scale-105"
+                className="cursor-pointer bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white font-bold py-7 px-10 rounded-full text-lg shadow-[0_0_25px_rgba(168,85,247,0.5)] hover:shadow-[0_0_35px_rgba(168,85,247,0.8)] transition-all duration-300 hover:scale-105"
               >
                 <Phone className="w-5 h-5 mr-2" />
                 Llamar Ahora
@@ -70,7 +133,7 @@ const Home = () => {
               <Button
                 onClick={handleMapClick}
                 variant="outline"
-                className="border-2 border-indigo-500 text-white hover:bg-indigo-600/20 font-bold py-7 px-10 rounded-full text-lg shadow-[0_0_20px_rgba(99,102,241,0.3)] hover:shadow-[0_0_30px_rgba(99,102,241,0.6)] transition-all duration-300 hover:scale-105"
+                className="cursor-pointer border-2 border-purple-500 text-white hover:bg-purple-600/20 font-bold py-7 px-10 rounded-full text-lg shadow-[0_0_20px_rgba(168,85,247,0.3)] hover:shadow-[0_0_30px_rgba(168,85,247,0.6)] transition-all duration-300 hover:scale-105"
               >
                 <MapPin className="w-5 h-5 mr-2" />
                 Cómo Llegar
@@ -78,7 +141,7 @@ const Home = () => {
             </div>
 
             {/* Availability badge */}
-            <div className="mt-10 inline-flex items-center gap-2 px-6 py-3 bg-zinc-900/50 border border-indigo-600/30 rounded-full backdrop-blur-sm">
+            <div className="mt-10 inline-flex items-center gap-2 px-6 py-3 bg-zinc-900/50 border border-purple-600/30 rounded-full backdrop-blur-sm">
               <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
               <span className="text-gray-300 font-medium">Disponible 24/7</span>
             </div>
@@ -90,7 +153,7 @@ const Home = () => {
       <section className="py-20 px-6 bg-gradient-to-b from-black to-zinc-950">
         <div className="container mx-auto max-w-7xl">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-black mb-4 bg-gradient-to-r from-white to-indigo-400 bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-5xl font-black mb-4 bg-gradient-to-r from-white to-purple-400 bg-clip-text text-transparent">
               Nuestros Servicios
             </h2>
             <p className="text-gray-400 text-lg max-w-2xl mx-auto">
@@ -110,7 +173,7 @@ const Home = () => {
       <section className="py-20 px-6 bg-zinc-950">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-black mb-4 bg-gradient-to-r from-white to-indigo-400 bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-5xl font-black mb-4 bg-gradient-to-r from-white to-purple-400 bg-clip-text text-transparent">
               Trabajos Realizados
             </h2>
             <p className="text-gray-400 text-lg">
@@ -122,7 +185,7 @@ const Home = () => {
             {portfolioImages.map((image) => (
               <div
                 key={image.id}
-                className="relative group overflow-hidden rounded-2xl border border-indigo-600/20 hover:border-indigo-500 transition-all duration-300 hover:shadow-[0_0_40px_rgba(99,102,241,0.4)] aspect-video"
+                className="relative group overflow-hidden rounded-2xl border border-purple-600/20 hover:border-purple-500 transition-all duration-300 hover:shadow-[0_0_40px_rgba(168,85,247,0.4)] aspect-video cursor-pointer"
               >
                 <img
                   src={image.url}
@@ -146,11 +209,11 @@ const Home = () => {
       </section>
 
       {/* Info Section */}
-      <section className="py-16 px-6 bg-black border-t border-indigo-600/20">
+      <section className="py-16 px-6 bg-black border-t border-purple-600/20">
         <div className="container mx-auto max-w-6xl">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            <div className="flex flex-col items-center p-6 bg-zinc-900/50 rounded-xl border border-indigo-600/20 hover:border-indigo-500 transition-all duration-300 hover:shadow-[0_0_20px_rgba(99,102,241,0.2)]">
-              <MapPin className="w-10 h-10 text-indigo-400 mb-4" />
+            <div className="flex flex-col items-center p-6 bg-zinc-900/50 rounded-xl border border-purple-600/20 hover:border-purple-500 transition-all duration-300 hover:shadow-[0_0_20px_rgba(168,85,247,0.2)] cursor-pointer">
+              <MapPin className="w-10 h-10 text-purple-400 mb-4" />
               <h3 className="text-xl font-bold text-white mb-2">Ubicación</h3>
               <p className="text-gray-400">
                 C. Pablo Iglesias, 106<br />
@@ -158,19 +221,19 @@ const Home = () => {
               </p>
             </div>
 
-            <div className="flex flex-col items-center p-6 bg-zinc-900/50 rounded-xl border border-indigo-600/20 hover:border-indigo-500 transition-all duration-300 hover:shadow-[0_0_20px_rgba(99,102,241,0.2)]">
-              <Phone className="w-10 h-10 text-indigo-400 mb-4" />
+            <div className="flex flex-col items-center p-6 bg-zinc-900/50 rounded-xl border border-purple-600/20 hover:border-purple-500 transition-all duration-300 hover:shadow-[0_0_20px_rgba(168,85,247,0.2)] cursor-pointer">
+              <Phone className="w-10 h-10 text-purple-400 mb-4" />
               <h3 className="text-xl font-bold text-white mb-2">Teléfono</h3>
               <a 
                 href={`tel:${companyInfo.phone}`}
-                className="text-indigo-400 hover:text-indigo-300 font-semibold text-lg transition-colors"
+                className="text-purple-400 hover:text-purple-300 font-semibold text-lg transition-colors cursor-pointer"
               >
                 684 23 79 96
               </a>
             </div>
 
-            <div className="flex flex-col items-center p-6 bg-zinc-900/50 rounded-xl border border-indigo-600/20 hover:border-indigo-500 transition-all duration-300 hover:shadow-[0_0_20px_rgba(99,102,241,0.2)]">
-              <Clock className="w-10 h-10 text-indigo-400 mb-4" />
+            <div className="flex flex-col items-center p-6 bg-zinc-900/50 rounded-xl border border-purple-600/20 hover:border-purple-500 transition-all duration-300 hover:shadow-[0_0_20px_rgba(168,85,247,0.2)] cursor-pointer">
+              <Clock className="w-10 h-10 text-purple-400 mb-4" />
               <h3 className="text-xl font-bold text-white mb-2">Horario</h3>
               <p className="text-gray-400">Abierto 24 horas</p>
             </div>
@@ -204,16 +267,16 @@ const Home = () => {
       </section>
 
       {/* Footer */}
-      <footer className="py-12 px-6 bg-black border-t border-indigo-600/20">
+      <footer className="py-12 px-6 bg-black border-t border-purple-600/20">
         <div className="container mx-auto max-w-4xl text-center">
-          <h3 className="text-2xl font-bold text-indigo-400 mb-3">
+          <h3 className="text-2xl font-bold text-purple-400 mb-3">
             {companyInfo.name}
           </h3>
           <p className="text-gray-400 mb-2">
             <Mail className="w-4 h-4 inline mr-2" />
             <a 
               href={`mailto:${companyInfo.email}`}
-              className="text-indigo-400 hover:text-indigo-300 transition-colors"
+              className="text-purple-400 hover:text-purple-300 transition-colors cursor-pointer"
             >
               {companyInfo.email}
             </a>

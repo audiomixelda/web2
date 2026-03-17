@@ -42,7 +42,7 @@ export const ContactForm = () => {
   };
 
   return (
-    <Card className="bg-zinc-900 border-indigo-600/20 max-w-2xl mx-auto shadow-[0_0_50px_rgba(99,102,241,0.2)]">
+    <Card className="bg-zinc-900 border-purple-600/20 max-w-2xl mx-auto shadow-[0_0_50px_rgba(168,85,247,0.2)]">
       <CardHeader className="text-center">
         <CardTitle className="text-3xl font-bold text-white mb-2">
           Solicita tu Presupuesto
@@ -76,7 +76,7 @@ export const ContactForm = () => {
               onChange={handleChange}
               placeholder="tu@email.com"
               required
-              className="bg-zinc-800 border-zinc-700 text-white placeholder:text-gray-500 focus:border-indigo-500 focus:ring-indigo-500"
+              className="bg-zinc-800 border-zinc-700 text-white placeholder:text-gray-500 focus:border-purple-500 focus:ring-purple-500"
             />
           </div>
 
@@ -90,7 +90,7 @@ export const ContactForm = () => {
               onChange={handleChange}
               placeholder="684 23 79 96"
               required
-              className="bg-zinc-800 border-zinc-700 text-white placeholder:text-gray-500 focus:border-indigo-500 focus:ring-indigo-500"
+              className="bg-zinc-800 border-zinc-700 text-white placeholder:text-gray-500 focus:border-purple-500 focus:ring-purple-500"
             />
           </div>
 
@@ -101,7 +101,7 @@ export const ContactForm = () => {
               onValueChange={(value) => setFormData({ ...formData, serviceType: value })}
               required
             >
-              <SelectTrigger className="bg-zinc-800 border-zinc-700 text-white focus:border-indigo-500 focus:ring-indigo-500">
+              <SelectTrigger className="bg-zinc-800 border-zinc-700 text-white focus:border-purple-500 focus:ring-purple-500">
                 <SelectValue placeholder="Selecciona un servicio" />
               </SelectTrigger>
               <SelectContent className="bg-zinc-800 border-zinc-700">
@@ -128,13 +128,13 @@ export const ContactForm = () => {
               placeholder="Cuéntanos sobre tu evento o proyecto..."
               rows={4}
               required
-              className="bg-zinc-800 border-zinc-700 text-white placeholder:text-gray-500 focus:border-indigo-500 focus:ring-indigo-500 resize-none"
+              className="bg-zinc-800 border-zinc-700 text-white placeholder:text-gray-500 focus:border-purple-500 focus:ring-purple-500 resize-none"
             />
           </div>
 
           <Button
             type="submit"
-            className="w-full bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-700 hover:to-blue-700 text-white font-bold py-6 rounded-full shadow-[0_0_20px_rgba(99,102,241,0.5)] hover:shadow-[0_0_30px_rgba(99,102,241,0.7)] transition-all duration-300"
+            className="w-full cursor-pointer bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white font-bold py-6 rounded-full shadow-[0_0_20px_rgba(168,85,247,0.5)] hover:shadow-[0_0_30px_rgba(168,85,247,0.7)] transition-all duration-300"
           >
             Enviar Consulta
           </Button>
