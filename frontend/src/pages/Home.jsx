@@ -87,12 +87,6 @@ const Home = () => {
             >
               Contacto
             </a>
-            <a 
-              href={`tel:${companyInfo.phone}`}
-              className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white font-bold py-3 px-6 rounded-full shadow-[0_0_20px_rgba(168,85,247,0.5)] hover:shadow-[0_0_30px_rgba(168,85,247,0.7)] transition-all duration-300 hover:scale-105"
-            >
-              Llamar
-            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -139,15 +133,9 @@ const Home = () => {
               <a 
                 href="#contacto" 
                 onClick={() => setMobileMenuOpen(false)}
-                className="px-6 py-4 text-white hover:bg-purple-600/20 hover:text-purple-400 font-semibold transition-colors border-b border-purple-500/10"
+                className="px-6 py-4 text-white hover:bg-purple-600/20 hover:text-purple-400 font-semibold transition-colors"
               >
                 Contacto
-              </a>
-              <a 
-                href={`tel:${companyInfo.phone}`}
-                className="mx-4 my-3 text-center bg-gradient-to-r from-purple-600 to-purple-700 text-white font-bold py-3 px-6 rounded-full shadow-[0_0_20px_rgba(168,85,247,0.5)]"
-              >
-                Llamar Ahora
               </a>
             </div>
           </div>

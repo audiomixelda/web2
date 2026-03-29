@@ -79,7 +79,7 @@ export const CustomCursor = () => {
             top: `${particle.y}px`,
             width: `${particle.size}px`,
             height: `${particle.size}px`,
-            background: 'radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.3) 40%, transparent 70%)',
+            background: 'radial-gradient(circle, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.2) 40%, transparent 70%)',
             opacity: particle.opacity,
             filter: `blur(${particle.blur}px)`,
             transform: 'translate(-50%, -50%)',
@@ -94,12 +94,12 @@ export const CustomCursor = () => {
         style={{
           left: `${mousePos.x}px`,
           top: `${mousePos.y}px`,
-          width: '120px',
-          height: '120px',
-          background: 'radial-gradient(circle, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.2) 30%, transparent 70%)',
+          width: '150px',
+          height: '150px',
+          background: 'radial-gradient(circle, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0.15) 30%, transparent 70%)',
           transform: 'translate(-50%, -50%)',
-          filter: 'blur(40px)',
-          opacity: 0.5,
+          filter: 'blur(50px)',
+          opacity: 0.6,
           mixBlendMode: 'screen'
         }}
       />
@@ -110,29 +110,12 @@ export const CustomCursor = () => {
         style={{
           left: `${mousePos.x}px`,
           top: `${mousePos.y}px`,
-          width: '60px',
-          height: '60px',
-          background: 'radial-gradient(circle, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.4) 50%, transparent 80%)',
+          width: '80px',
+          height: '80px',
+          background: 'radial-gradient(circle, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.25) 50%, transparent 80%)',
           transform: 'translate(-50%, -50%)',
-          filter: 'blur(20px)',
-          opacity: 0.6,
-          mixBlendMode: 'screen'
-        }}
-      />
-
-      {/* Core cursor - bright center */}
-      <div
-        className="fixed pointer-events-none z-[9999] rounded-full transition-all duration-100 ease-out"
-        style={{
-          left: `${mousePos.x}px`,
-          top: `${mousePos.y}px`,
-          width: '12px',
-          height: '12px',
-          background: 'radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,255,255,0.8) 60%, transparent 100%)',
-          transform: 'translate(-50%, -50%)',
-          filter: 'blur(2px)',
-          opacity: 0.9,
-          boxShadow: '0 0 20px rgba(255,255,255,0.8), 0 0 40px rgba(255,255,255,0.4)',
+          filter: 'blur(25px)',
+          opacity: 0.5,
           mixBlendMode: 'screen'
         }}
       />
