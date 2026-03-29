@@ -3,8 +3,10 @@ import { Button } from '../components/ui/button';
 import { ServiceCard } from '../components/ServiceCard';
 import { ContactForm } from '../components/ContactForm';
 import { companyInfo, services, portfolioImages } from '../data/mock';
+import { useState } from 'react';
 
 const Home = () => {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const handleCallClick = () => {
     window.location.href = `tel:${companyInfo.phone}`;
   };
@@ -15,15 +17,6 @@ const Home = () => {
 
   return (
     <div className="min-h-screen bg-black text-white">
-      {/* Logo in top left corner */}
-      <div className="fixed top-4 left-4 md:top-6 md:left-6 z-50 cursor-pointer">
-        <img 
-          src={companyInfo.logo} 
-          alt="Audiomix Logo" 
-          className="w-16 h-16 md:w-24 md:h-24 drop-shadow-[0_0_20px_rgba(168,85,247,0.7)] hover:scale-110 transition-transform duration-300"
-        />
-      </div>
-
       {/* Floating Call Button */}
       <a
         href={`tel:${companyInfo.phone}`}
@@ -36,6 +29,103 @@ const Home = () => {
 
       {/* Hero Section */}
       <section className="hero-section relative min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Logo in top left - only on hero */}
+        <div className="absolute top-6 left-6 md:top-8 md:left-8 z-20">
+          <img 
+            src={companyInfo.logo} 
+            alt="Audiomix Logo" 
+            className="w-28 h-28 md:w-36 md:h-36 drop-shadow-[0_0_25px_rgba(168,85,247,0.8)] hover:scale-105 transition-transform duration-300"
+          />
+        </div>
+
+        {/* Navigation Menu - top right */}
+        <nav className="absolute top-6 right-6 md:top-8 md:right-8 z-20">
+          {/* Desktop Menu */}
+          <div className="hidden md:flex items-center gap-8">
+            <a 
+              href="#servicios" 
+              className="text-white hover:text-purple-400 font-semibold transition-colors duration-300 text-lg"
+            >
+              Servicios
+            </a>
+            <a 
+              href="#trabajos" 
+              className="text-white hover:text-purple-400 font-semibold transition-colors duration-300 text-lg"
+            >
+              Trabajos
+            </a>
+            <a 
+              href="#contacto" 
+              className="text-white hover:text-purple-400 font-semibold transition-colors duration-300 text-lg"
+            >
+              Contacto
+            </a>
+            <a 
+              href={`tel:${companyInfo.phone}`}
+              className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white font-bold py-3 px-6 rounded-full shadow-[0_0_20px_rgba(168,85,247,0.5)] hover:shadow-[0_0_30px_rgba(168,85,247,0.7)] transition-all duration-300 hover:scale-105"
+            >
+              Llamar
+            </a>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="md:hidden p-3 bg-purple-600/20 backdrop-blur-md rounded-lg border border-purple-500/30 hover:bg-purple-600/30 transition-all"
+          >
+            <svg 
+              className="w-6 h-6 text-white" 
+              fill="none" 
+              strokeLinecap="round" 
+              strokeLinejoin="round" 
+              strokeWidth="2" 
+              viewBox="0 0 24 24" 
+              stroke="currentColor"
+            >
+              {mobileMenuOpen ? (
+                <path d="M6 18L18 6M6 6l12 12" />
+              ) : (
+                <path d="M4 6h16M4 12h16M4 18h16" />
+              )}
+            </svg>
+          </button>
+        </nav>
+
+        {/* Mobile Menu Dropdown */}
+        {mobileMenuOpen && (
+          <div className="absolute top-20 right-6 md:hidden z-30 bg-zinc-900/95 backdrop-blur-xl rounded-xl border border-purple-500/30 shadow-[0_0_30px_rgba(168,85,247,0.3)] overflow-hidden">
+            <div className="flex flex-col py-2">
+              <a 
+                href="#servicios" 
+                onClick={() => setMobileMenuOpen(false)}
+                className="px-6 py-4 text-white hover:bg-purple-600/20 hover:text-purple-400 font-semibold transition-colors border-b border-purple-500/10"
+              >
+                Servicios
+              </a>
+              <a 
+                href="#trabajos" 
+                onClick={() => setMobileMenuOpen(false)}
+                className="px-6 py-4 text-white hover:bg-purple-600/20 hover:text-purple-400 font-semibold transition-colors border-b border-purple-500/10"
+              >
+                Trabajos
+              </a>
+              <a 
+                href="#contacto" 
+                onClick={() => setMobileMenuOpen(false)}
+                className="px-6 py-4 text-white hover:bg-purple-600/20 hover:text-purple-400 font-semibold transition-colors border-b border-purple-500/10"
+              >
+                Contacto
+              </a>
+              <a 
+                href={`tel:${companyInfo.phone}`}
+                className="mx-4 my-3 text-center bg-gradient-to-r from-purple-600 to-purple-700 text-white font-bold py-3 px-6 rounded-full shadow-[0_0_20px_rgba(168,85,247,0.5)]"
+              >
+                Llamar Ahora
+              </a>
+            </div>
+          </div>
+        )}
+
         {/* Animated background effects */}
         <div className="absolute inset-0 bg-gradient-to-br from-black via-zinc-900 to-black">
           <div className="absolute top-20 left-20 w-96 h-96 bg-purple-600/20 rounded-full blur-[120px] animate-pulse"></div>
@@ -88,7 +178,7 @@ const Home = () => {
       </section>
 
       {/* Services Section */}
-      <section className="py-12 md:py-20 px-4 md:px-6 bg-gradient-to-b from-black to-zinc-950">
+      <section id="servicios" className="py-12 md:py-20 px-4 md:px-6 bg-gradient-to-b from-black to-zinc-950">
         <div className="container mx-auto max-w-7xl">
           <div className="text-center mb-12 md:mb-16">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-black mb-4 bg-gradient-to-r from-white to-purple-400 bg-clip-text text-transparent">
@@ -108,7 +198,7 @@ const Home = () => {
       </section>
 
       {/* Portfolio Section */}
-      <section className="py-12 md:py-20 px-4 md:px-6 bg-zinc-950">
+      <section id="trabajos" className="py-12 md:py-20 px-4 md:px-6 bg-zinc-950">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12 md:mb-16">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-black mb-4 bg-gradient-to-r from-white to-purple-400 bg-clip-text text-transparent">
