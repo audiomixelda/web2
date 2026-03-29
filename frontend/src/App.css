@@ -48,6 +48,22 @@
     }
 }
 
+/* Slide in animation for floating button */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-slideIn {
+    animation: slideIn 0.4s ease-out;
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .floating-call-btn {

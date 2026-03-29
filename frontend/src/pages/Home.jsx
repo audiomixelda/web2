@@ -3,10 +3,32 @@ import { Button } from '../components/ui/button';
 import { ServiceCard } from '../components/ServiceCard';
 import { ContactForm } from '../components/ContactForm';
 import { companyInfo, services, portfolioImages } from '../data/mock';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { CustomCursor } from '../components/CustomCursor';
 
 const Home = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [showFloatingButton, setShowFloatingButton] = useState(false);
+  const [isInHero, setIsInHero] = useState(true);
+
+  // Handle scroll for floating button and cursor effect
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      const viewportHeight = window.innerHeight;
+      
+      // Show floating button after scrolling past hero (viewport height)
+      setShowFloatingButton(scrollPosition > viewportHeight * 0.8);
+      
+      // Show cursor effect only in hero section
+      setIsInHero(scrollPosition < viewportHeight * 0.9);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Check initial position
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
   const handleCallClick = () => {
     window.location.href = `tel:${companyInfo.phone}`;
   };
@@ -17,15 +39,20 @@ const Home = () => {
 
   return (
     <div className="min-h-screen bg-black text-white">
-      {/* Floating Call Button */}
-      <a
-        href={`tel:${companyInfo.phone}`}
-        className="floating-call-btn fixed bottom-4 right-4 md:bottom-6 md:right-6 z-50 bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white font-bold py-3 px-5 md:py-4 md:px-6 rounded-full shadow-[0_0_30px_rgba(168,85,247,0.6)] hover:shadow-[0_0_40px_rgba(168,85,247,0.9)] transition-all duration-300 flex items-center gap-2 animate-pulse hover:animate-none hover:scale-110 cursor-pointer text-sm md:text-base"
-      >
-        <Phone className="w-4 h-4 md:w-5 md:h-5" />
-        <span className="hidden sm:inline">Llamar Ahora</span>
-        <span className="sm:hidden">Llamar</span>
-      </a>
+      {/* Custom Cursor Effect - Only in Hero Section */}
+      {isInHero && <CustomCursor />}
+
+      {/* Floating Call Button - Only after scrolling */}
+      {showFloatingButton && (
+        <a
+          href={`tel:${companyInfo.phone}`}
+          className="floating-call-btn fixed bottom-4 right-4 md:bottom-6 md:right-6 z-50 bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white font-bold py-3 px-5 md:py-4 md:px-6 rounded-full shadow-[0_0_30px_rgba(168,85,247,0.6)] hover:shadow-[0_0_40px_rgba(168,85,247,0.9)] transition-all duration-300 flex items-center gap-2 hover:scale-110 cursor-pointer text-sm md:text-base animate-slideIn"
+        >
+          <Phone className="w-4 h-4 md:w-5 md:h-5" />
+          <span className="hidden sm:inline">Llamar Ahora</span>
+          <span className="sm:hidden">Llamar</span>
+        </a>
+      )}
 
       {/* Hero Section */}
       <section className="hero-section relative min-h-screen flex items-center justify-center overflow-hidden">
