@@ -99,7 +99,12 @@ export const clientLogos = [
   {
     id: 5,
     name: "Ayuntamiento de Elda",
-    url: "https://customer-assets.emergentagent.com/job_audiomix-stage/artifacts/w661yw88_images-3.png"
+    url: "https://customer-assets.emergentagent.com/job_audiomix-stage/artifacts/tm3aknhy_images-4.png"
+  },
+  {
+    id: 6,
+    name: "Los 40",
+    url: "https://customer-assets.emergentagent.com/job_audiomix-stage/artifacts/efomr7x9_hq720.jpg"
   }
 ];
 
