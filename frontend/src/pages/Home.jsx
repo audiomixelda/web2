@@ -151,6 +151,17 @@ const Home = () => {
 
         <div className="container mx-auto px-4 md:px-6 relative z-10">
           <div className="text-center max-w-5xl mx-auto">
+            {/* Availability badge - above title */}
+            <div className="mb-6">
+              <div className="inline-flex items-center glass-effect backdrop-blur-xl border border-purple-500/20 gap-3 px-8 py-4 rounded-full shadow-[0_8px_32px_rgba(168,85,247,0.15)]">
+                <div className="relative">
+                  <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                  <div className="absolute inset-0 w-3 h-3 bg-green-500 rounded-full animate-ping"></div>
+                </div>
+                <span className="text-gray-200 font-medium tracking-wide">Disponible 24/7</span>
+              </div>
+            </div>
+
             {/* Main Company Name - Large */}
             <h1 className="hero-title text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black mb-8 leading-[1.1] px-2">
               <span className="gradient-text block">AUDIOMIX</span>
@@ -184,15 +195,6 @@ const Home = () => {
                 <MapPin className="w-5 h-5 mr-2" />
                 Cómo Llegar
               </Button>
-            </div>
-
-            {/* Availability badge */}
-            <div className="inline-flex items-center glass-effect backdrop-blur-xl border border-purple-500/20 gap-3 px-8 py-4 rounded-full shadow-[0_8px_32px_rgba(168,85,247,0.15)]">
-              <div className="relative">
-                <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-                <div className="absolute inset-0 w-3 h-3 bg-green-500 rounded-full animate-ping"></div>
-              </div>
-              <span className="text-gray-200 font-medium tracking-wide">Disponible 24/7</span>
             </div>
           </div>
         </div>
