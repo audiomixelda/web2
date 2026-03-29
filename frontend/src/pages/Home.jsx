@@ -196,10 +196,12 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </section>
 
-      {/* Logo Banner - Client Logos with Infinite Scroll */}
-      <LogoBanner />
+        {/* Logo Banner - inside hero */}
+        <div className="absolute bottom-0 left-0 right-0 z-10">
+          <LogoBanner />
+        </div>
+      </section>
 
       {/* Services Section */}
       <section id="servicios" className="py-16 md:py-24 px-4 md:px-6 bg-gradient-to-b from-black via-zinc-950 to-black relative">

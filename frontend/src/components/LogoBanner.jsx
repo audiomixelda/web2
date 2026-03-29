@@ -5,10 +5,10 @@ export const LogoBanner = () => {
   const duplicatedLogos = [...clientLogos, ...clientLogos, ...clientLogos];
 
   return (
-    <section className="logo-banner-section relative w-full bg-black py-12 md:py-16 overflow-hidden">
+    <section className="logo-banner-section relative w-full bg-transparent py-8 md:py-12 overflow-hidden">
       {/* Gradient fade overlays */}
-      <div className="absolute left-0 top-0 bottom-0 w-32 md:w-48 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none"></div>
-      <div className="absolute right-0 top-0 bottom-0 w-32 md:w-48 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none"></div>
+      <div className="absolute left-0 top-0 bottom-0 w-24 md:w-40 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none"></div>
+      <div className="absolute right-0 top-0 bottom-0 w-24 md:w-40 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none"></div>
 
       {/* Scrolling logos container */}
       <div className="logo-marquee">
@@ -30,8 +30,8 @@ export const LogoBanner = () => {
       </div>
 
       {/* Optional subtitle */}
-      <div className="text-center mt-8">
-        <p className="text-gray-600 text-sm uppercase tracking-[0.3em] font-medium">
+      <div className="text-center mt-6">
+        <p className="text-gray-500 text-xs uppercase tracking-[0.3em] font-medium">
           Confían en nosotros
         </p>
       </div>
