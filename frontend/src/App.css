@@ -8,13 +8,27 @@
 /* Hero section effects */
 .hero-section {
     position: relative;
-    background: linear-gradient(135deg, #000000 0%, #18181b 50%, #000000 100%);
+    background: radial-gradient(ellipse at top, #1a0b2e 0%, #000000 50%);
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(139, 92, 246, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(168, 85, 247, 0.1) 0%, transparent 50%);
+    pointer-events: none;
 }
 
 /* Service card hover effects */
 .service-card {
     position: relative;
     overflow: hidden;
+    backdrop-filter: blur(10px);
 }
 
 .service-card::before {
@@ -24,9 +38,9 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(168, 85, 247, 0.1), transparent);
+    background: linear-gradient(135deg, rgba(168, 85, 247, 0.15), transparent);
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.4s ease;
     z-index: 0;
 }
 
@@ -34,17 +48,47 @@
     opacity: 1;
 }
 
+.service-card::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #a855f7, #7c3aed, #a855f7);
+    background-size: 300% 300%;
+    border-radius: inherit;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    animation: gradient-shift 3s ease infinite;
+}
+
+.service-card:hover::after {
+    opacity: 0.3;
+}
+
+@keyframes gradient-shift {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
 /* Floating button animation */
 .floating-call-btn {
     animation: pulse-glow 2s ease-in-out infinite;
+    backdrop-filter: blur(10px);
 }
 
 @keyframes pulse-glow {
     0%, 100% {
-        box-shadow: 0 0 30px rgba(168, 85, 247, 0.6);
+        box-shadow: 0 0 30px rgba(168, 85, 247, 0.6), 0 5px 15px rgba(0, 0, 0, 0.3);
     }
     50% {
-        box-shadow: 0 0 50px rgba(168, 85, 247, 0.9);
+        box-shadow: 0 0 50px rgba(168, 85, 247, 0.9), 0 8px 20px rgba(0, 0, 0, 0.4);
     }
 }
 
@@ -64,26 +108,6 @@
     animation: slideIn 0.4s ease-out;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .floating-call-btn {
-        bottom: 1rem;
-        right: 1rem;
-        padding: 0.75rem 1rem;
-        font-size: 0.875rem;
-    }
-}
-
-/* Smooth transitions for interactive elements */
-button,
-a,
-.service-card,
-input,
-textarea,
-select {
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
-}
-
 /* Focus states with purple glow */
 input:focus,
 textarea:focus,
@@ -96,4 +120,29 @@ select:focus {
 /* Image hover effects */
 img {
     transition: transform 0.5s ease;
+}
+
+/* Glass morphism effect */
+.glass-effect {
+    background: rgba(26, 11, 46, 0.6);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(168, 85, 247, 0.2);
+}
+
+/* Smooth transitions for interactive elements */
+button,
+a,
+.service-card,
+input,
+textarea,
+select {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Gradient text */
+.gradient-text {
+    background: linear-gradient(135deg, #ffffff 0%, #e9d5ff 50%, #a855f7 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }

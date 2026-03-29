@@ -151,32 +151,34 @@ const Home = () => {
         <div className="container mx-auto px-4 md:px-6 relative z-10">
           <div className="text-center max-w-5xl mx-auto">
             {/* Main Company Name - Large */}
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black mb-6 bg-gradient-to-r from-white via-purple-200 to-purple-400 bg-clip-text text-transparent leading-tight px-2">
-              Audiomix Producciones
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black mb-8 leading-[1.1] px-2">
+              <span className="gradient-text block">Audiomix</span>
+              <span className="gradient-text block">Producciones</span>
             </h1>
             
-            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 mb-4 font-light px-4">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 mb-6 font-light px-4 max-w-3xl mx-auto leading-relaxed">
               Sonido, iluminación y equipos profesionales para eventos
             </p>
 
-            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-purple-400 mb-10 font-semibold px-4">
-              {companyInfo.coverage}
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-purple-300 mb-12 font-medium px-4 tracking-wide">
+              ✨ {companyInfo.coverage}
             </p>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center px-4">
+            <div className="flex flex-col sm:flex-row gap-5 justify-center items-center px-4 mb-12">
               <Button
                 onClick={handleCallClick}
-                className="w-full sm:w-auto cursor-pointer bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white font-bold py-6 md:py-7 px-8 md:px-10 rounded-full text-base md:text-lg shadow-[0_0_25px_rgba(168,85,247,0.5)] hover:shadow-[0_0_35px_rgba(168,85,247,0.8)] transition-all duration-300 hover:scale-105"
+                className="w-full sm:w-auto cursor-pointer bg-gradient-to-r from-purple-600 via-purple-500 to-purple-700 hover:from-purple-700 hover:via-purple-600 hover:to-purple-800 text-white font-bold py-6 md:py-7 px-10 md:px-12 rounded-full text-base md:text-lg shadow-[0_10px_40px_rgba(168,85,247,0.5)] hover:shadow-[0_15px_50px_rgba(168,85,247,0.7)] transition-all duration-500 hover:scale-105 relative overflow-hidden group"
               >
-                <Phone className="w-5 h-5 mr-2" />
-                Llamar Ahora
+                <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+                <Phone className="w-5 h-5 mr-2 relative z-10" />
+                <span className="relative z-10">Llamar Ahora</span>
               </Button>
 
               <Button
                 onClick={handleMapClick}
                 variant="outline"
-                className="w-full sm:w-auto cursor-pointer border-2 border-purple-500 text-white hover:bg-purple-600/20 font-bold py-6 md:py-7 px-8 md:px-10 rounded-full text-base md:text-lg shadow-[0_0_20px_rgba(168,85,247,0.3)] hover:shadow-[0_0_30px_rgba(168,85,247,0.6)] transition-all duration-300 hover:scale-105"
+                className="w-full sm:w-auto cursor-pointer border-2 border-purple-500/60 bg-purple-950/20 hover:bg-purple-900/40 backdrop-blur-sm text-white hover:text-purple-100 font-bold py-6 md:py-7 px-10 md:px-12 rounded-full text-base md:text-lg shadow-[0_10px_30px_rgba(168,85,247,0.2)] hover:shadow-[0_15px_40px_rgba(168,85,247,0.4)] hover:border-purple-400 transition-all duration-500 hover:scale-105"
               >
                 <MapPin className="w-5 h-5 mr-2" />
                 Cómo Llegar
@@ -184,27 +186,38 @@ const Home = () => {
             </div>
 
             {/* Availability badge */}
-            <div className="mt-10 inline-flex items-center gap-2 px-6 py-3 bg-zinc-900/50 border border-purple-600/30 rounded-full backdrop-blur-sm">
-              <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-              <span className="text-gray-300 font-medium">Disponible 24/7</span>
+            <div className="inline-flex items-center gap-3 px-8 py-4 glass-effect rounded-full backdrop-blur-xl border border-purple-500/20 shadow-[0_8px_32px_rgba(168,85,247,0.15)]">
+              <div className="relative">
+                <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                <div className="absolute inset-0 w-3 h-3 bg-green-500 rounded-full animate-ping"></div>
+              </div>
+              <span className="text-gray-200 font-medium tracking-wide">Disponible 24/7</span>
             </div>
           </div>
         </div>
       </section>
 
       {/* Services Section */}
-      <section id="servicios" className="py-12 md:py-20 px-4 md:px-6 bg-gradient-to-b from-black to-zinc-950">
-        <div className="container mx-auto max-w-7xl">
-          <div className="text-center mb-12 md:mb-16">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black mb-4 bg-gradient-to-r from-white to-purple-400 bg-clip-text text-transparent">
-              Nuestros Servicios
+      <section id="servicios" className="py-16 md:py-24 px-4 md:px-6 bg-gradient-to-b from-black via-zinc-950 to-black relative">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(139,92,246,0.1)_0%,_transparent_70%)] pointer-events-none"></div>
+        
+        <div className="container mx-auto max-w-7xl relative z-10">
+          <div className="text-center mb-16 md:mb-20">
+            <div className="inline-block mb-4">
+              <span className="text-purple-400 font-semibold text-sm md:text-base tracking-[0.2em] uppercase">Nuestros Servicios</span>
+              <div className="h-1 w-20 mx-auto mt-2 bg-gradient-to-r from-transparent via-purple-500 to-transparent"></div>
+            </div>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black mb-6 gradient-text leading-tight">
+              Soluciones Audiovisuales
+              <br />
+              de Primera Clase
             </h2>
-            <p className="text-gray-400 text-base md:text-lg max-w-2xl mx-auto px-4">
-              Soluciones profesionales para eventos de cualquier magnitud
+            <p className="text-gray-400 text-base md:text-lg max-w-2xl mx-auto px-4 leading-relaxed">
+              Equipos profesionales y experiencia técnica para hacer de tu evento algo memorable
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {services.map((service) => (
               <ServiceCard key={service.id} service={service} />
             ))}
