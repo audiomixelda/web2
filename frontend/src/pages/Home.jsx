@@ -69,7 +69,7 @@ const Home = () => {
         {/* Navigation Menu - top right */}
         <nav className="absolute top-6 right-6 md:top-8 md:right-8 z-20">
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-6 lg:gap-8">
             <a
               href="#servicios"
               className="text-white hover:text-purple-400 font-semibold transition-colors duration-300 text-lg">
@@ -152,47 +152,45 @@ const Home = () => {
         <div className="container mx-auto px-4 md:px-6 relative z-10">
           <div className="text-center max-w-5xl mx-auto">
             {/* Availability badge - above title */}
-            <div className="mb-6">
-              <div className="inline-flex items-center glass-effect backdrop-blur-xl border border-purple-500/20 gap-3 px-8 py-4 rounded-full shadow-[0_8px_32px_rgba(168,85,247,0.15)]">
+            <div className="mb-4 md:mb-6">
+              <div className="inline-flex items-center glass-effect backdrop-blur-xl border border-purple-500/20 gap-2 md:gap-3 px-4 py-2 md:px-8 md:py-4 rounded-full shadow-[0_8px_32px_rgba(168,85,247,0.15)]">
                 <div className="relative">
-                  <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-                  <div className="absolute inset-0 w-3 h-3 bg-green-500 rounded-full animate-ping"></div>
+                  <div className="w-2 h-2 md:w-3 md:h-3 bg-green-500 rounded-full animate-pulse"></div>
+                  <div className="absolute inset-0 w-2 h-2 md:w-3 md:h-3 bg-green-500 rounded-full animate-ping"></div>
                 </div>
-                <span className="text-gray-200 font-medium tracking-wide">Disponible 24/7</span>
+                <span className="text-gray-200 font-medium tracking-wide text-xs md:text-base">Disponible 24/7</span>
               </div>
             </div>
 
             {/* Main Company Name - Large */}
-            <h1 className="hero-title text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black mb-8 leading-[1.1] px-2">
+            <h1 className="hero-title text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black mb-4 md:mb-6 leading-[1.1] px-2">
               <span className="gradient-text block">AUDIOMIX</span>
               <span className="gradient-text block">PRODUCCIONES</span>
             </h1>
             
-            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 mb-6 font-light px-4 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 mb-3 md:mb-4 font-light px-4 max-w-3xl mx-auto leading-relaxed">
               Sonido, iluminación y equipos profesionales para eventos
             </p>
 
-            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-purple-300 mb-12 font-medium px-4 tracking-wide">
+            <p className="text-xs sm:text-sm md:text-base lg:text-lg text-purple-300 mb-6 md:mb-10 font-medium px-4 tracking-wide">
                {companyInfo.coverage}
             </p>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-5 justify-center items-center px-4 mb-12">
+            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center px-4 mb-0">
               <Button
                 onClick={handleCallClick}
-                className="w-full sm:w-auto cursor-pointer bg-gradient-to-r from-purple-600 via-purple-500 to-purple-700 hover:from-purple-700 hover:via-purple-600 hover:to-purple-800 text-white font-bold py-6 md:py-7 px-10 md:px-12 rounded-full text-base md:text-lg shadow-[0_10px_40px_rgba(168,85,247,0.5)] hover:shadow-[0_15px_50px_rgba(168,85,247,0.7)] transition-all duration-500 hover:scale-105 relative overflow-hidden group">
-
+                className="w-full sm:w-auto cursor-pointer bg-gradient-to-r from-purple-600 via-purple-500 to-purple-700 hover:from-purple-700 hover:via-purple-600 hover:to-purple-800 text-white font-bold py-4 md:py-6 px-8 md:px-10 rounded-full text-sm md:text-base shadow-[0_10px_40px_rgba(168,85,247,0.5)] hover:shadow-[0_15px_50px_rgba(168,85,247,0.7)] transition-all duration-500 hover:scale-105 relative overflow-hidden group">
                 <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
-                <Phone className="w-5 h-5 mr-2 relative z-10" />
+                <Phone className="w-4 h-4 md:w-5 md:h-5 mr-2 relative z-10" />
                 <span className="relative z-10">Llamar Ahora</span>
               </Button>
 
               <Button
                 onClick={handleMapClick}
                 variant="outline"
-                className="w-full sm:w-auto cursor-pointer border-2 border-purple-500/60 bg-purple-950/20 hover:bg-purple-900/40 backdrop-blur-sm text-white hover:text-purple-100 font-bold py-6 md:py-7 px-10 md:px-12 rounded-full text-base md:text-lg shadow-[0_10px_30px_rgba(168,85,247,0.2)] hover:shadow-[0_15px_40px_rgba(168,85,247,0.4)] hover:border-purple-400 transition-all duration-500 hover:scale-105">
-
-                <MapPin className="w-5 h-5 mr-2" />
+                className="w-full sm:w-auto cursor-pointer border-2 border-purple-500/60 bg-purple-950/20 hover:bg-purple-900/40 backdrop-blur-sm text-white hover:text-purple-100 font-bold py-4 md:py-6 px-8 md:px-10 rounded-full text-sm md:text-base shadow-[0_10px_30px_rgba(168,85,247,0.2)] hover:shadow-[0_15px_40px_rgba(168,85,247,0.4)] hover:border-purple-400 transition-all duration-500 hover:scale-105">
+                <MapPin className="w-4 h-4 md:w-5 md:h-5 mr-2" />
                 Cómo Llegar
               </Button>
             </div>
@@ -206,7 +204,7 @@ const Home = () => {
       </section>
 
       {/* Services Section */}
-      <section id="servicios" className="py-16 md:py-24 px-4 md:px-6 bg-gradient-to-b from-black via-zinc-950 to-black relative">
+      <section id="servicios" className="py-12 md:py-20 px-4 md:px-6 bg-gradient-to-b from-black via-zinc-950 to-black relative">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(139,92,246,0.1)_0%,_transparent_70%)] pointer-events-none"></div>
         
         <div className="container mx-auto max-w-7xl relative z-10">
@@ -215,17 +213,17 @@ const Home = () => {
               <span className="text-purple-400 font-semibold text-sm md:text-base tracking-[0.2em] uppercase">Nuestros Servicios</span>
               <div className="h-1 w-20 mx-auto mt-2 bg-gradient-to-r from-transparent via-purple-500 to-transparent"></div>
             </div>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black mb-6 gradient-text leading-tight">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-black mb-4 md:mb-6 gradient-text leading-tight">
               Soluciones Audiovisuales
               <br />
-              
+              de Primera Clase
             </h2>
-            <p className="text-gray-400 text-base md:text-lg max-w-2xl mx-auto px-4 leading-relaxed">
+            <p className="text-gray-400 text-sm md:text-base max-w-2xl mx-auto px-4 leading-relaxed">
               Equipos profesionales y experiencia técnica para hacer de tu evento algo memorable
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
             {services.map((service) =>
             <ServiceCard key={service.id} service={service} />
             )}
