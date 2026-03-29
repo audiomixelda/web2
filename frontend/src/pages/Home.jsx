@@ -2,6 +2,7 @@ import { Phone, MapPin, Clock, Mail, Star } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { ServiceCard } from '../components/ServiceCard';
 import { ContactForm } from '../components/ContactForm';
+import { LogoBanner } from '../components/LogoBanner';
 import { companyInfo, services, portfolioImages } from '../data/mock';
 import { useState, useEffect } from 'react';
 import { CustomCursor } from '../components/CustomCursor';
@@ -196,6 +197,9 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      {/* Logo Banner - Client Logos with Infinite Scroll */}
+      <LogoBanner />
 
       {/* Services Section */}
       <section id="servicios" className="py-16 md:py-24 px-4 md:px-6 bg-gradient-to-b from-black via-zinc-950 to-black relative">

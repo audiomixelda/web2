@@ -75,6 +75,34 @@ export const portfolioImages = [
   }
 ];
 
+export const clientLogos = [
+  {
+    id: 1,
+    name: "C.D. Eldense",
+    url: "https://customer-assets.emergentagent.com/job_audiomix-stage/artifacts/fcx3ga6m_78392742-2c00-4c91-8fcc-1408360c1843-479.png"
+  },
+  {
+    id: 2,
+    name: "Cadena SER",
+    url: "https://customer-assets.emergentagent.com/job_audiomix-stage/artifacts/xzdvnf0c_Cadena_Ser_logo.svg.png"
+  },
+  {
+    id: 3,
+    name: "Elche CF",
+    url: "https://customer-assets.emergentagent.com/job_audiomix-stage/artifacts/o1wb4kuy_Elche_CF_logo.svg.png"
+  },
+  {
+    id: 4,
+    name: "Halo Club",
+    url: "https://customer-assets.emergentagent.com/job_audiomix-stage/artifacts/4hb57vg0_halo-club.jpg"
+  },
+  {
+    id: 5,
+    name: "Ayuntamiento de Elda",
+    url: "https://customer-assets.emergentagent.com/job_audiomix-stage/artifacts/w661yw88_images-3.png"
+  }
+];
+
 export const serviceTypes = [
   "Servicio Técnico",
   "Instalación de Sonido",
