@@ -3,12 +3,6 @@
 .App {
     min-height: 100vh;
     background: #000000;
-    cursor: none; /* Hide default cursor */
-}
-
-/* Hide default cursor globally */
-* {
-    cursor: none !important;
 }
 
 /* Hero section effects */
