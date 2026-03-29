@@ -85,7 +85,7 @@ export const clientLogos = [
   {
     id: 2,
     name: "Cadena SER",
-    url: "https://customer-assets.emergentagent.com/job_audiomix-stage/artifacts/xzdvnf0c_Cadena_Ser_logo.svg.png",
+    url: "https://customer-assets.emergentagent.com/job_audiomix-stage/artifacts/ctgvmfn7_Cadena_Ser_logo.svg-2.png",
     website: "https://cadenaser.com"
   },
   {
@@ -97,19 +97,19 @@ export const clientLogos = [
   {
     id: 4,
     name: "Halo Club",
-    url: "https://customer-assets.emergentagent.com/job_audiomix-stage/artifacts/4hb57vg0_halo-club.jpg",
+    url: "https://customer-assets.emergentagent.com/job_audiomix-stage/artifacts/dyh7frww_halo-club.png",
     website: "https://haloclub.es"
   },
   {
     id: 5,
     name: "Ayuntamiento de Elda",
-    url: "https://customer-assets.emergentagent.com/job_audiomix-stage/artifacts/tm3aknhy_images-4.png",
+    url: "https://customer-assets.emergentagent.com/job_audiomix-stage/artifacts/laucr907_LOGO%20AYUNTAMIENTO%20ELDA.png",
     website: "https://www.elda.es"
   },
   {
     id: 6,
     name: "Los 40",
-    url: "https://customer-assets.emergentagent.com/job_audiomix-stage/artifacts/efomr7x9_hq720.jpg",
+    url: "https://customer-assets.emergentagent.com/job_audiomix-stage/artifacts/ldbklej5_hq720.png",
     website: "https://los40.com"
   }
 ];
