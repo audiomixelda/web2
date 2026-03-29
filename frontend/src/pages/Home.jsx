@@ -216,7 +216,7 @@ const Home = () => {
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-black mb-4 md:mb-6 gradient-text leading-tight">
               Soluciones Audiovisuales
               <br />
-              de Primera Clase
+              
             </h2>
             <p className="text-gray-400 text-sm md:text-base max-w-2xl mx-auto px-4 leading-relaxed">
               Equipos profesionales y experiencia técnica para hacer de tu evento algo memorable
