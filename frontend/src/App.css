@@ -179,6 +179,8 @@ select {
   padding: 0 2rem;
   min-width: 160px;
   height: 80px;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .logo-image {

@@ -14,9 +14,13 @@ export const LogoBanner = () => {
       <div className="logo-marquee">
         <div className="logo-track">
           {duplicatedLogos.map((logo, index) => (
-            <div
+            <a
               key={`${logo.id}-${index}`}
+              href={logo.website}
+              target="_blank"
+              rel="noopener noreferrer"
               className="logo-item group"
+              aria-label={`Visitar sitio web de ${logo.name}`}
             >
               <img
                 src={logo.url}
@@ -24,7 +28,7 @@ export const LogoBanner = () => {
                 className="logo-image"
                 loading="lazy"
               />
-            </div>
+            </a>
           ))}
         </div>
       </div>

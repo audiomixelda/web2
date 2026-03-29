@@ -79,32 +79,38 @@ export const clientLogos = [
   {
     id: 1,
     name: "C.D. Eldense",
-    url: "https://customer-assets.emergentagent.com/job_audiomix-stage/artifacts/fcx3ga6m_78392742-2c00-4c91-8fcc-1408360c1843-479.png"
+    url: "https://customer-assets.emergentagent.com/job_audiomix-stage/artifacts/fcx3ga6m_78392742-2c00-4c91-8fcc-1408360c1843-479.png",
+    website: "https://www.cdeldense.es"
   },
   {
     id: 2,
     name: "Cadena SER",
-    url: "https://customer-assets.emergentagent.com/job_audiomix-stage/artifacts/xzdvnf0c_Cadena_Ser_logo.svg.png"
+    url: "https://customer-assets.emergentagent.com/job_audiomix-stage/artifacts/xzdvnf0c_Cadena_Ser_logo.svg.png",
+    website: "https://cadenaser.com"
   },
   {
     id: 3,
     name: "Elche CF",
-    url: "https://customer-assets.emergentagent.com/job_audiomix-stage/artifacts/o1wb4kuy_Elche_CF_logo.svg.png"
+    url: "https://customer-assets.emergentagent.com/job_audiomix-stage/artifacts/o1wb4kuy_Elche_CF_logo.svg.png",
+    website: "https://www.elchecf.es"
   },
   {
     id: 4,
     name: "Halo Club",
-    url: "https://customer-assets.emergentagent.com/job_audiomix-stage/artifacts/4hb57vg0_halo-club.jpg"
+    url: "https://customer-assets.emergentagent.com/job_audiomix-stage/artifacts/4hb57vg0_halo-club.jpg",
+    website: "https://haloclub.es"
   },
   {
     id: 5,
     name: "Ayuntamiento de Elda",
-    url: "https://customer-assets.emergentagent.com/job_audiomix-stage/artifacts/tm3aknhy_images-4.png"
+    url: "https://customer-assets.emergentagent.com/job_audiomix-stage/artifacts/tm3aknhy_images-4.png",
+    website: "https://www.elda.es"
   },
   {
     id: 6,
     name: "Los 40",
-    url: "https://customer-assets.emergentagent.com/job_audiomix-stage/artifacts/efomr7x9_hq720.jpg"
+    url: "https://customer-assets.emergentagent.com/job_audiomix-stage/artifacts/efomr7x9_hq720.jpg",
+    website: "https://los40.com"
   }
 ];
 
