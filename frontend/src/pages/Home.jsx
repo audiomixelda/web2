@@ -232,14 +232,22 @@ const Home = () => {
       </section>
 
       {/* Portfolio Section */}
-      <section id="trabajos" className="py-12 md:py-20 px-4 md:px-6 bg-zinc-950">
-        <div className="container mx-auto max-w-6xl">
+      <section id="trabajos" className="py-12 md:py-20 px-4 md:px-6 bg-zinc-950 relative">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(139,92,246,0.1)_0%,_transparent_70%)] pointer-events-none"></div>
+        
+        <div className="container mx-auto max-w-6xl relative z-10">
           <div className="text-center mb-12 md:mb-16">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black mb-4 bg-gradient-to-r from-white to-purple-400 bg-clip-text text-transparent">
-Trabajos Realizados
+            <div className="inline-block mb-3 md:mb-4">
+              <span className="text-purple-400 font-semibold text-xs md:text-sm tracking-[0.2em] uppercase">Trabajos Destacados</span>
+              <div className="h-0.5 md:h-1 w-16 md:w-20 mx-auto mt-2 bg-gradient-to-r from-transparent via-purple-500 to-transparent"></div>
+            </div>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-black mb-4 md:mb-6 gradient-text leading-tight">
+              Proyectos que Hablan
+              <br />
+              por Sí Mismos
             </h2>
-            <p className="text-gray-400 text-base md:text-lg px-4">
-              Algunos de nuestros proyectos más destacados
+            <p className="text-gray-400 text-sm md:text-base max-w-2xl mx-auto px-4 leading-relaxed">
+              Una muestra de eventos en los que hemos participado con éxito
             </p>
           </div>
 
