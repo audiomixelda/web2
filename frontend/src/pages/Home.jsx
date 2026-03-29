@@ -150,7 +150,7 @@ const Home = () => {
         </div>
 
         <div className="container mx-auto px-4 md:px-6 relative z-10">
-          <div className="text-center max-w-5xl mx-auto">
+          <div className="max-w-5xl text-center mx-auto">
             {/* Availability badge - above title */}
             <div className="!mb-[30px]">
               <div className="inline-flex items-center glass-effect backdrop-blur-xl border border-purple-500/20 !-mt-[9px] !-mb-[60px] !ml-[0px] !mr-[0px] !pt-[8px] !pb-[8px] !pl-[16px] !pr-[16px] !gap-[8px] md:!gap-3 md:!px-8 md:!py-4 rounded-full shadow-[0_8px_32px_rgba(168,85,247,0.15)]">
@@ -177,7 +177,7 @@ const Home = () => {
             </p>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row justify-center items-center !-mt-[80px] !mb-[0px] !pl-[16px] !pr-[16px] !gap-[12px] md:!gap-4">
+            <div className="flex flex-col sm:flex-row justify-center items-center !-mt-[80px] !mb-[0px] !pt-[9px] !pl-[16px] !pr-[16px] !gap-[12px] md:!gap-4">
               <Button
                 onClick={handleCallClick}
                 className="inline-flex items-center justify-center whitespace-nowrap focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-primary/90 h-9 w-full sm:w-auto cursor-pointer bg-gradient-to-r from-purple-600 via-purple-500 to-purple-700 hover:from-purple-700 hover:via-purple-600 hover:to-purple-800 hover:shadow-[0_15px_50px_rgba(168,85,247,0.7)] transition-all duration-500 hover:scale-105 relative overflow-hidden group font-bold text-sm md:text-base !mt-[0px] !mb-[0px] !pt-[16px] !pb-[16px] !pl-[32px] !pr-[32px] !gap-[8px] md:!py-6 md:!px-10 rounded-full shadow-[0_10px_40px_rgba(168,85,247,0.5)] text-white">
@@ -242,12 +242,12 @@ const Home = () => {
               <div className="h-0.5 md:h-1 w-16 md:w-20 mx-auto mt-2 bg-gradient-to-r from-transparent via-purple-500 to-transparent"></div>
             </div>
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-black mb-4 md:mb-6 gradient-text leading-tight">
-              Proyectos que Hablan
+              Proyectos realizados
               <br />
-              por Sí Mismos
+              
             </h2>
-            <p className="text-gray-400 text-sm md:text-base max-w-2xl mx-auto px-4 leading-relaxed">
-              Una muestra de eventos en los que hemos participado con éxito
+            <p className="text-gray-400 text-sm md:text-base max-w-2xl mx-auto px-4 leading-relaxed">Algunos de los trabajos en los que hemos participado con éxito formando parte de importantes eventos
+
             </p>
           </div>
 
