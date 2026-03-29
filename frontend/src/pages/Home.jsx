@@ -187,7 +187,7 @@ const Home = () => {
             </div>
 
             {/* Availability badge */}
-            <div className="inline-flex items-center gap-3 px-8 py-4 glass-effect rounded-full backdrop-blur-xl border border-purple-500/20 shadow-[0_8px_32px_rgba(168,85,247,0.15)]">
+            <div className="inline-flex items-center glass-effect backdrop-blur-xl border border-purple-500/20 gap-3 px-8 py-4 rounded-full shadow-[0_8px_32px_rgba(168,85,247,0.15)]">
               <div className="relative">
                 <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
                 <div className="absolute inset-0 w-3 h-3 bg-green-500 rounded-full animate-ping"></div>
