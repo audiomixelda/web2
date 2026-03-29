@@ -146,3 +146,9 @@ select {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
+/* Hero title font */
+.hero-title {
+    font-family: 'Titan One', 'Poppins', cursive;
+    letter-spacing: 0.02em;
+}

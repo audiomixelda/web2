@@ -151,9 +151,9 @@ const Home = () => {
         <div className="container mx-auto px-4 md:px-6 relative z-10">
           <div className="text-center max-w-5xl mx-auto">
             {/* Main Company Name - Large */}
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black mb-8 leading-[1.1] px-2">
-              <span className="gradient-text block">Audiomix</span>
-              <span className="gradient-text block">Producciones</span>
+            <h1 className="hero-title text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black mb-8 leading-[1.1] px-2">
+              <span className="gradient-text block">AUDIOMIX</span>
+              <span className="gradient-text block">PRODUCCIONES</span>
             </h1>
             
             <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 mb-6 font-light px-4 max-w-3xl mx-auto leading-relaxed">
