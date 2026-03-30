@@ -58,12 +58,11 @@ const Home = () => {
       {/* Hero Section */}
       <section className="hero-section relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Logo in top left - only on hero */}
-        <div className="absolute top-6 left-6 md:top-8 md:left-8 z-20">
+        <div className="absolute top-4 left-4 md:top-8 md:left-8 z-20">
           <img
             src={companyInfo.logo}
             alt="Audiomix Logo"
-            className="w-28 h-28 md:w-36 md:h-36 drop-shadow-[0_0_25px_rgba(168,85,247,0.8)] hover:scale-105 transition-transform duration-300 !-mt-[30px] !-mb-[30px]" />
-
+            className="w-16 h-16 sm:w-20 sm:h-20 md:w-28 md:h-28 lg:w-36 lg:h-36 drop-shadow-[0_0_25px_rgba(168,85,247,0.8)] hover:scale-105 transition-transform duration-300" />
         </div>
 
         {/* Navigation Menu - top right */}
@@ -152,8 +151,8 @@ const Home = () => {
         <div className="container mx-auto px-4 md:px-6 relative z-10">
           <div className="max-w-5xl text-center mx-auto">
             {/* Availability badge - above title */}
-            <div className="!mb-[30px]">
-              <div className="inline-flex items-center glass-effect backdrop-blur-xl border border-purple-500/20 !-mt-[9px] !-mb-[60px] !ml-[0px] !mr-[0px] !pt-[8px] !pb-[8px] !pl-[16px] !pr-[16px] !gap-[8px] md:!gap-3 md:!px-8 md:!py-4 rounded-full shadow-[0_8px_32px_rgba(168,85,247,0.15)]">
+            <div className="mb-6 md:mb-8">
+              <div className="inline-flex items-center glass-effect backdrop-blur-xl border border-purple-500/20 px-4 py-2 gap-2 md:gap-3 md:px-8 md:py-4 rounded-full shadow-[0_8px_32px_rgba(168,85,247,0.15)]">
                 <div className="relative">
                   <div className="w-2 h-2 md:w-3 md:h-3 bg-green-500 rounded-full animate-pulse"></div>
                   <div className="absolute inset-0 w-2 h-2 md:w-3 md:h-3 bg-green-500 rounded-full animate-ping"></div>
@@ -163,34 +162,34 @@ const Home = () => {
             </div>
 
             {/* Main Company Name - Large */}
-            <h1 className="hero-title text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black mb-4 md:mb-6 leading-[1.1] px-2">
+            <h1 className="hero-title text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-4 md:mb-6 leading-[1.1] px-2">
               <span className="gradient-text block">AUDIOMIX</span>
               <span className="gradient-text block">PRODUCCIONES</span>
             </h1>
             
-            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 mb-3 md:mb-4 font-light px-4 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl text-gray-300 mb-3 md:mb-4 font-light px-4 max-w-3xl mx-auto leading-relaxed">
               Sonido, iluminación y equipos profesionales para eventos
             </p>
 
-            <p className="text-xs sm:text-sm md:text-base lg:text-lg text-purple-300 mb-6 md:mb-10 font-medium px-4 tracking-wide">
+            <p className="text-sm sm:text-base md:text-lg text-purple-300 mb-6 md:mb-10 font-medium px-4 tracking-wide">
                {companyInfo.coverage}
             </p>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row justify-center items-center !-mt-[80px] !mb-[0px] !pt-[9px] !pl-[16px] !pr-[16px] !gap-[12px] md:!gap-4">
+            <div className="flex flex-row justify-center items-center gap-2 md:gap-4 px-4">
               <Button
                 onClick={handleCallClick}
-                className="inline-flex items-center justify-center whitespace-nowrap focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-primary/90 h-9 w-full sm:w-auto cursor-pointer bg-gradient-to-r from-purple-600 via-purple-500 to-purple-700 hover:from-purple-700 hover:via-purple-600 hover:to-purple-800 hover:shadow-[0_15px_50px_rgba(168,85,247,0.7)] transition-all duration-500 hover:scale-105 relative overflow-hidden group font-bold text-sm md:text-base !mt-[0px] !mb-[0px] !pt-[16px] !pb-[16px] !pl-[32px] !pr-[32px] !gap-[8px] md:!py-6 md:!px-10 rounded-full shadow-[0_10px_40px_rgba(168,85,247,0.5)] text-white">
+                className="inline-flex items-center justify-center whitespace-nowrap focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-primary/90 cursor-pointer bg-gradient-to-r from-purple-600 via-purple-500 to-purple-700 hover:from-purple-700 hover:via-purple-600 hover:to-purple-800 hover:shadow-[0_15px_50px_rgba(168,85,247,0.7)] transition-all duration-500 hover:scale-105 relative overflow-hidden group font-bold text-xs sm:text-sm md:text-base py-2.5 px-4 sm:py-3 sm:px-6 md:py-4 md:px-8 rounded-full shadow-[0_10px_40px_rgba(168,85,247,0.5)] text-white">
                 <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
-                <Phone className="w-4 h-4 md:w-5 md:h-5 mr-2 relative z-10" />
+                <Phone className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5 mr-1.5 sm:mr-2 relative z-10" />
                 <span className="relative z-10">Llamar Ahora</span>
               </Button>
 
               <Button
                 onClick={handleMapClick}
                 variant="outline"
-                className="inline-flex items-center justify-center whitespace-nowrap focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 h-9 w-full sm:w-auto cursor-pointer border-2 border-purple-500/60 hover:bg-purple-900/40 backdrop-blur-sm hover:text-purple-100 hover:shadow-[0_15px_40px_rgba(168,85,247,0.4)] hover:border-purple-400 transition-all duration-500 hover:scale-105 font-bold text-sm md:text-base !my-[90px] !pt-[16px] !pb-[16px] !pl-[32px] !pr-[32px] !gap-[8px] md:!py-6 md:!px-10 rounded-full shadow-[0_10px_30px_rgba(168,85,247,0.2)] text-white bg-purple-950/20">
-                <MapPin className="w-4 h-4 md:w-5 md:h-5 mr-2" />
+                className="inline-flex items-center justify-center whitespace-nowrap focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 cursor-pointer border-2 border-purple-500/60 hover:bg-purple-900/40 backdrop-blur-sm hover:text-purple-100 hover:shadow-[0_15px_40px_rgba(168,85,247,0.4)] hover:border-purple-400 transition-all duration-500 hover:scale-105 font-bold text-xs sm:text-sm md:text-base py-2.5 px-4 sm:py-3 sm:px-6 md:py-4 md:px-8 rounded-full shadow-[0_10px_30px_rgba(168,85,247,0.2)] text-white bg-purple-950/20">
+                <MapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5 mr-1.5 sm:mr-2" />
                 Cómo Llegar
               </Button>
             </div>
