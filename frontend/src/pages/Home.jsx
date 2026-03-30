@@ -141,12 +141,8 @@ const Home = () => {
           </div>
         }
 
-        {/* Animated background effects */}
-        <div className="absolute inset-0 bg-gradient-to-br from-black via-zinc-900 to-black">
-          <div className="absolute top-20 left-20 w-96 h-96 bg-purple-600/20 rounded-full blur-[120px] animate-pulse"></div>
-          <div className="absolute bottom-20 right-20 w-96 h-96 bg-purple-800/20 rounded-full blur-[120px] animate-pulse delay-1000"></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-purple-700/10 rounded-full blur-[150px]"></div>
-        </div>
+        {/* Background - Pure Black */}
+        <div className="absolute inset-0 bg-black"></div>
 
         <div className="container mx-auto px-4 md:px-6 relative z-10 flex items-center justify-center h-full">
           <div className="max-w-5xl text-center mx-auto pb-20">
