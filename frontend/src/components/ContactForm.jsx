@@ -16,22 +16,44 @@ export const ContactForm = () => {
     serviceType: '',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsSubmitting(true);
     
-    // Mock submission
-    console.log('Form submitted:', formData);
-    toast.success('¡Consulta enviada! Te contactaremos pronto.');
-    
-    // Reset form
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      serviceType: '',
-      message: ''
-    });
+    try {
+      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/contact`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error('Error al enviar el formulario');
+      }
+
+      const result = await response.json();
+      console.log('Form submitted successfully:', result);
+      
+      toast.success('¡Consulta enviada! Te contactaremos pronto.');
+      
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        serviceType: '',
+        message: ''
+      });
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      toast.error('Hubo un error al enviar tu consulta. Por favor, intenta de nuevo.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e) => {
@@ -134,9 +156,10 @@ export const ContactForm = () => {
 
           <Button
             type="submit"
-            className="w-full cursor-pointer bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white font-bold py-6 rounded-full shadow-[0_0_20px_rgba(168,85,247,0.5)] hover:shadow-[0_0_30px_rgba(168,85,247,0.7)] transition-all duration-300"
+            disabled={isSubmitting}
+            className="w-full cursor-pointer bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white font-bold py-6 rounded-full shadow-[0_0_20px_rgba(168,85,247,0.5)] hover:shadow-[0_0_30px_rgba(168,85,247,0.7)] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            Enviar Consulta
+            {isSubmitting ? 'Enviando...' : 'Enviar Consulta'}
           </Button>
         </form>
       </CardContent>
