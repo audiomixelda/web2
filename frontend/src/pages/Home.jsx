@@ -159,8 +159,8 @@ const Home = () => {
 
             {/* Main Company Name - Large */}
             <h1 className="hero-title text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-3 md:mb-4 leading-[1.1] px-2">
-              <span className="gradient-text block">AUDIOMIX</span>
-              <span className="gradient-text block">PRODUCCIONES</span>
+              <span className="block text-white">AUDIOMIX</span>
+              <span className="block text-white">PRODUCCIONES</span>
             </h1>
             
             <p className="text-base sm:text-lg md:text-xl text-gray-300 mb-2 md:mb-3 font-light px-4 max-w-3xl mx-auto leading-relaxed">
