@@ -6,7 +6,7 @@ export const companyInfo = {
   description: "Servicio 24/7 para toda la Comunidad Valenciana",
   phone: "684237996",
   email: "producciones@audiomixelda.es",
-  address: "C. Pablo Iglesias, 106, 03600 Elda, Alicante",
+  address: "Carrer Societat Musical Verge del Remei, 3, 03610 Petrer, Alicante",
   coverage: "Cobertura en toda la comarca de la Comunidad Valenciana",
   rating: 5.0,
   reviews: 127,
