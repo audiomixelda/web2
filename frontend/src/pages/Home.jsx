@@ -350,7 +350,7 @@ const Home = () => {
             </a>
           </p>
           <p className="text-gray-500 text-sm mt-6">
-            © 2024 Audiomix Producciones. Todos los derechos reservados.
+            © 2024 Audiomix Producciones
           </p>
         </div>
       </footer>
