@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audiomix Producciones - Alquiler de Equipos Audiovisuales en Alicante</title>
+    <meta name="description" content="Alquiler de equipos audiovisuales profesionales en Alicante. Sonido, iluminación y producción de eventos. Servicio 24/7.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Titan+One&family=Poppins:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --purple-400: #c084fc;
+            --purple-500: #a855f7;
+            --purple-600: #9333ea;
+            --purple-700: #7e22ce;
+            --purple-900: #581c87;
+            --gray-300: #d1d5db;
+            --gray-400: #9ca3af;
+            --gray-500: #6b7280;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #000;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        .hero-title {
+            font-family: 'Titan One', cursive;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: #000;
+        }
+
+        .logo {
+            position: absolute;
+            top: 2rem;
+            left: 2rem;
+            z-index: 20;
+        }
+
+        .logo img {
+            width: 100px;
+            height: 100px;
+            filter: drop-shadow(0 0 25px rgba(168, 85, 247, 0.8));
+            transition: transform 0.3s;
+        }
+
+        .logo img:hover {
+            transform: scale(1.05);
+        }
+
+        nav {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            z-index: 20;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 2rem;
+            font-weight: 600;
+            font-size: 1.125rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--purple-400);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: rgba(147, 51, 234, 0.2);
+            border: 1px solid rgba(168, 85, 247, 0.3);
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            color: white;
+        }
+
+        .hero-content {
+            text-align: center;
+            z-index: 10;
+            max-width: 80rem;
+            padding: 0 1rem;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.5rem 2rem;
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(168, 85, 247, 0.2);
+            border-radius: 9999px;
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 32px rgba(168, 85, 247, 0.15);
+        }
+
+        .pulse-dot {
+            width: 12px;
+            height: 12px;
+            background: #10b981;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            color: #fff;
+        }
+
+        .hero-description {
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            color: var(--gray-300);
+            margin-bottom: 1rem;
+            font-weight: 300;
+        }
+
+        .hero-coverage {
+            font-size: clamp(0.875rem, 1.5vw, 1.125rem);
+            color: var(--purple-400);
+            margin-bottom: 2.5rem;
+            font-weight: 500;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            background: linear-gradient(to right, var(--purple-600), var(--purple-500), var(--purple-700));
+            color: white;
+            text-decoration: none;
+            border-radius: 9999px;
+            font-weight: 700;
+            box-shadow: 0 10px 40px rgba(168, 85, 247, 0.5);
+            transition: all 0.5s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 50px rgba(168, 85, 247, 0.7);
+        }
+
+        .btn-outline {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            background: rgba(76, 29, 149, 0.2);
+            border: 2px solid rgba(168, 85, 247, 0.6);
+            color: white;
+            text-decoration: none;
+            border-radius: 9999px;
+            font-weight: 700;
+            backdrop-filter: blur(4px);
+            box-shadow: 0 10px 30px rgba(168, 85, 247, 0.2);
+            transition: all 0.5s;
+        }
+
+        .btn-outline:hover {
+            background: rgba(112, 26, 117, 0.4);
+            border-color: var(--purple-400);
+            transform: scale(1.05);
+        }
+
+        /* Logo Banner */
+        .logo-banner {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 2rem 0;
+            overflow: hidden;
+        }
+
+        .logo-scroll {
+            display: flex;
+            animation: scroll 30s linear infinite;
+            width: fit-content;
+        }
+
+        .logo-scroll img {
+            height: 60px;
+            margin: 0 3rem;
+            filter: brightness(0) invert(1);
+            opacity: 0.7;
+            transition: opacity 0.3s;
+        }
+
+        .logo-scroll img:hover {
+            opacity: 1;
+        }
+
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* Sections */
+        section {
+            padding: 5rem 1.5rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-badge {
+            color: var(--purple-400);
+            font-weight: 600;
+            font-size: 0.875rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 900;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, var(--purple-400), var(--purple-600));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-description {
+            color: var(--gray-400);
+            max-width: 42rem;
+            margin: 0 auto;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .service-card {
+            background: rgba(39, 39, 42, 0.5);
+            border: 1px solid rgba(168, 85, 247, 0.2);
+            border-radius: 1rem;
+            padding: 2rem;
+            transition: all 0.3s;
+        }
+
+        .service-card:hover {
+            border-color: var(--purple-500);
+            box-shadow: 0 0 40px rgba(168, 85, 247, 0.4);
+            transform: translateY(-5px);
+        }
+
+        .service-icon {
+            width: 3rem;
+            height: 3rem;
+            background: linear-gradient(to right, var(--purple-600), var(--purple-500));
+            border-radius: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .service-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .service-description {
+            color: var(--gray-400);
+            line-height: 1.6;
+        }
+
+        /* Portfolio Grid */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .portfolio-item {
+            position: relative;
+            border-radius: 1rem;
+            overflow: hidden;
+            aspect-ratio: 16/9;
+            border: 1px solid rgba(168, 85, 247, 0.2);
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .portfolio-item:hover {
+            border-color: var(--purple-500);
+            box-shadow: 0 0 40px rgba(168, 85, 247, 0.4);
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .portfolio-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+            display: flex;
+            align-items: flex-end;
+            padding: 1.5rem;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+
+        .portfolio-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        /* Contact Form */
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(39, 39, 42, 0.5);
+            padding: 3rem;
+            border-radius: 1.5rem;
+            border: 1px solid rgba(168, 85, 247, 0.2);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--purple-400);
+        }
+
+        .form-input,
+        .form-select,
+        .form-textarea {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(168, 85, 247, 0.3);
+            border-radius: 0.5rem;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            transition: all 0.3s;
+        }
+
+        .form-input:focus,
+        .form-select:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: var(--purple-500);
+            box-shadow: 0 0 20px rgba(168, 85, 247, 0.3);
+        }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(to right, var(--purple-600), var(--purple-700));
+            color: white;
+            border: none;
+            border-radius: 9999px;
+            font-weight: 700;
+            font-size: 1.125rem;
+            cursor: pointer;
+            box-shadow: 0 0 20px rgba(168, 85, 247, 0.5);
+            transition: all 0.3s;
+        }
+
+        .btn-submit:hover {
+            box-shadow: 0 0 30px rgba(168, 85, 247, 0.7);
+            transform: scale(1.02);
+        }
+
+        /* Info Cards */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .info-card {
+            background: rgba(39, 39, 42, 0.5);
+            padding: 2rem;
+            border-radius: 1rem;
+            border: 1px solid rgba(168, 85, 247, 0.2);
+            transition: all 0.3s;
+        }
+
+        .info-card:hover {
+            border-color: var(--purple-500);
+            box-shadow: 0 0 20px rgba(168, 85, 247, 0.2);
+        }
+
+        .info-icon {
+            font-size: 2.5rem;
+            color: var(--purple-400);
+            margin-bottom: 1rem;
+        }
+
+        .info-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .info-text {
+            color: var(--gray-400);
+        }
+
+        .info-link {
+            color: var(--purple-400);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.125rem;
+        }
+
+        .info-link:hover {
+            color: var(--purple-300);
+        }
+
+        /* Reviews Section */
+        .reviews-section {
+            background: rgba(39, 39, 42, 0.5);
+            text-align: center;
+        }
+
+        .stars {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.25rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .star {
+            color: #fbbf24;
+            font-size: 1.75rem;
+        }
+
+        .rating-text {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-left: 0.5rem;
+        }
+
+        .testimonial {
+            font-size: 1.125rem;
+            font-style: italic;
+            color: var(--gray-300);
+            margin: 2rem auto;
+            max-width: 600px;
+            min-height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .testimonial-author {
+            color: var(--purple-400);
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .testimonial-event {
+            color: var(--gray-500);
+            font-size: 0.875rem;
+        }
+
+        .testimonial-dots {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            background: var(--gray-600);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .dot.active {
+            background: var(--purple-500);
+            width: 24px;
+            border-radius: 4px;
+        }
+
+        .review-count {
+            color: var(--gray-500);
+            font-size: 0.875rem;
+            margin-top: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #000;
+            border-top: 1px solid rgba(168, 85, 247, 0.2);
+            padding: 3rem 1.5rem;
+            text-align: center;
+        }
+
+        .footer-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--purple-400);
+            margin-bottom: 1rem;
+        }
+
+        .footer-email {
+            color: var(--purple-400);
+            text-decoration: none;
+        }
+
+        .footer-email:hover {
+            color: var(--purple-300);
+        }
+
+        .footer-copyright {
+            color: var(--gray-500);
+            font-size: 0.875rem;
+            margin-top: 1.5rem;
+        }
+
+        /* Floating Button */
+        .floating-btn {
+            position: fixed;
+            bottom: 1.5rem;
+            right: 1.5rem;
+            display: none;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 1.5rem;
+            background: linear-gradient(to right, var(--purple-600), var(--purple-700));
+            color: white;
+            text-decoration: none;
+            border-radius: 9999px;
+            box-shadow: 0 0 30px rgba(168, 85, 247, 0.6);
+            z-index: 50;
+            animation: slideIn 0.5s;
+        }
+
+        .floating-btn.show {
+            display: flex;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(100px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .logo img {
+                width: 64px;
+                height: 64px;
+            }
+
+            nav a {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-form {
+                padding: 2rem 1.5rem;
+            }
+
+            section {
+                padding: 3rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating Call Button -->
+    <a href="tel:684237996" class="floating-btn" id="floatingBtn">
+        <span>📞</span>
+        <span>Llamar Ahora</span>
+    </a>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="logo">
+            <img src="https://customer-assets.emergentagent.com/job_audiomix-stage/artifacts/bxap1zub_Copia%20de%20Cartel%20Collage%20texto%20blanco%20e%20i%CC%81ndigo%20sobre%20foto%20Concierto-4.png" alt="Audiomix Logo">
+        </div>
+
+        <nav>
+            <a href="#servicios">Servicios</a>
+            <a href="#trabajos">Trabajos</a>
+            <a href="#contacto">Contacto</a>
+            <button class="mobile-menu-btn">☰</button>
+        </nav>
+
+        <div class="hero-content">
+            <div class="badge">
+                <div class="pulse-dot"></div>
+                <span>Disponible 24/7</span>
+            </div>
+
+            <h1 class="hero-title">
+                AUDIOMIX<br>
+                PRODUCCIONES
+            </h1>
+
+            <p class="hero-description">
+                Sonido, iluminación y equipos profesionales para eventos
+            </p>
+
+            <p class="hero-coverage">
+                Cobertura en toda la comarca de la Comunidad Valenciana
+            </p>
+
+            <div class="cta-buttons">
+                <a href="tel:684237996" class="btn-primary">
+                    <span>📞</span>
+                    <span>Llamar Ahora</span>
+                </a>
+                <a href="https://maps.google.com/?q=Carrer+Societat+Musical+Verge+del+Remei,+3,+03610+Petrer,+Alicante" target="_blank" class="btn-outline">
+                    <span>📍</span>
+                    <span>Cómo Llegar</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="logo-banner">
+            <div class="logo-scroll">
+                <!-- Duplicated for seamless scroll -->
+                <img src="https://customer-assets.emergentagent.com/job_audiomix-stage/artifacts/fcx3ga6m_78392742-2c00-4c91-8fcc-1408360c1843-479.png" alt="CD Eldense">
+                <img src="https://customer-assets.emergentagent.com/job_audiomix-stage/artifacts/ctgvmfn7_Cadena_Ser_logo.svg-2.png" alt="Cadena SER">
+                <img src="https://customer-assets.emergentagent.com/job_audiomix-stage/artifacts/o1wb4kuy_Elche_CF_logo.svg.png" alt="Elche CF">
+                <img src="https://customer-assets.emergentagent.com/job_audiomix-stage/artifacts/dyh7frww_halo-club.png" alt="Halo Club">
+                <img src="https://customer-assets.emergentagent.com/job_audiomix-stage/artifacts/laucr907_LOGO%20AYUNTAMIENTO%20ELDA.png" alt="Ayuntamiento de Elda">
+                <img src="https://customer-assets.emergentagent.com/job_audiomix-stage/artifacts/ldbklej5_hq720.png" alt="Los 40">
+                <!-- Duplicated -->
+                <img src="https://customer-assets.emergentagent.com/job_audiomix-stage/artifacts/fcx3ga6m_78392742-2c00-4c91-8fcc-1408360c1843-479.png" alt="CD Eldense">
+                <img src="https://customer-assets.emergentagent.com/job_audiomix-stage/artifacts/ctgvmfn7_Cadena_Ser_logo.svg-2.png" alt="Cadena SER">
+                <img src="https://customer-assets.emergentagent.com/job_audiomix-stage/artifacts/o1wb4kuy_Elche_CF_logo.svg.png" alt="Elche CF">
+                <img src="https://customer-assets.emergentagent.com/job_audiomix-stage/artifacts/dyh7frww_halo-club.png" alt="Halo Club">
+                <img src="https://customer-assets.emergentagent.com/job_audiomix-stage/artifacts/laucr907_LOGO%20AYUNTAMIENTO%20ELDA.png" alt="Ayuntamiento de Elda">
+                <img src="https://customer-assets.emergentagent.com/job_audiomix-stage/artifacts/ldbklej5_hq720.png" alt="Los 40">
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicios" style="background: linear-gradient(to bottom, #000, #09090b, #000);">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Nuestros Servicios</span>
+                <h2 class="section-title">Soluciones Audiovisuales</h2>
+                <p class="section-description">
+                    Equipos profesionales y experiencia técnica para hacer de tu evento algo memorable
+                </p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🔧</div>
+                    <h3 class="service-title">Servicio Técnico</h3>
+                    <p class="service-description">Soporte técnico profesional para eventos de cualquier magnitud</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🔊</div>
+                    <h3 class="service-title">Instalación de Sonido</h3>
+                    <p class="service-description">Sistemas de audio de alta calidad para cualquier tipo de evento</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">💡</div>
+                    <h3 class="service-title">Instalación de Iluminación</h3>
+                    <p class="service-description">Iluminación profesional que crea la atmósfera perfecta</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">⚡</div>
+                    <h3 class="service-title">Instalaciones Eléctricas</h3>
+                    <p class="service-description">Instalaciones eléctricas seguras y certificadas</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">📅</div>
+                    <h3 class="service-title">Producción de Eventos</h3>
+                    <p class="service-description">Producción completa de eventos desde la planificación hasta la ejecución</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">📦</div>
+                    <h3 class="service-title">Alquiler de Equipos</h3>
+                    <p class="service-description">Amplio catálogo de equipos audiovisuales profesionales</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="trabajos" style="background: #09090b;">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Trabajos Destacados</span>
+                <h2 class="section-title">Proyectos realizados</h2>
+                <p class="section-description">
+                    Algunos de los trabajos en los que hemos participado con éxito formando parte de importantes eventos
+                </p>
+            </div>
+
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <img src="https://customer-assets.emergentagent.com/job_audiomix-stage/artifacts/g8cziq7g_471251347_2078860312566138_5872974820478959273_n.jpg" alt="Iluminación para eventos" loading="lazy">
+                    <div class="portfolio-overlay">
+                        <p class="portfolio-title">Iluminación para eventos</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <img src="https://customer-assets.emergentagent.com/job_audiomix-stage/artifacts/qwmvt7no_476385264_1053523906790356_7470528526085261009_n.jpg" alt="Instalación completa de sonido" loading="lazy">
+                    <div class="portfolio-overlay">
+                        <p class="portfolio-title">Instalación completa de sonido</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <img src="https://customer-assets.emergentagent.com/job_audiomix-stage/artifacts/dy0n2slj_476411434_1053523966790350_2226184457241793226_n.jpg" alt="Proyección y audio profesional" loading="lazy">
+                    <div class="portfolio-overlay">
+                        <p class="portfolio-title">Proyección y audio profesional</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <img src="https://customer-assets.emergentagent.com/job_audiomix-stage/artifacts/9dyhhss5_648663655_18061862756671890_680534569477131672_n.jpg" alt="Producción de eventos corporativos" loading="lazy">
+                    <div class="portfolio-overlay">
+                        <p class="portfolio-title">Producción de eventos corporativos</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="contacto" style="background: linear-gradient(to bottom, #09090b, #000);">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Contacto</span>
+                <h2 class="section-title">¿Necesitas un presupuesto?</h2>
+                <p class="section-description">
+                    Cuéntanos sobre tu proyecto y te responderemos lo antes posible
+                </p>
+            </div>
+
+            <form class="contact-form" action="mailto:producciones@audiomixelda.es" method="post" enctype="text/plain">
+                <div class="form-group">
+                    <label class="form-label" for="name">Nombre *</label>
+                    <input type="text" id="name" name="name" class="form-input" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="email">Email *</label>
+                    <input type="email" id="email" name="email" class="form-input" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="phone">Teléfono *</label>
+                    <input type="tel" id="phone" name="phone" class="form-input" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="serviceType">Tipo de Servicio *</label>
+                    <select id="serviceType" name="serviceType" class="form-select" required>
+                        <option value="">Selecciona un servicio</option>
+                        <option value="Servicio Técnico">Servicio Técnico</option>
+                        <option value="Instalación de Sonido">Instalación de Sonido</option>
+                        <option value="Instalación de Iluminación">Instalación de Iluminación</option>
+                        <option value="Instalaciones Eléctricas">Instalaciones Eléctricas</option>
+                        <option value="Producción de Eventos">Producción de Eventos</option>
+                        <option value="Alquiler de Equipos">Alquiler de Equipos</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="message">Mensaje *</label>
+                    <textarea id="message" name="message" class="form-textarea" placeholder="Cuéntanos sobre tu evento o proyecto..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn-submit">Enviar Consulta</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Info Section -->
+    <section style="background: #000; border-top: 1px solid rgba(168, 85, 247, 0.2);">
+        <div class="container">
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="info-icon">📍</div>
+                    <h3 class="info-title">Ubicación</h3>
+                    <p class="info-text">Carrer Societat Musical Verge del Remei, 3, 03610 Petrer, Alicante</p>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-icon">📞</div>
+                    <h3 class="info-title">Teléfono</h3>
+                    <a href="tel:684237996" class="info-link">684 23 79 96</a>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-icon">🕐</div>
+                    <h3 class="info-title">Horario</h3>
+                    <p class="info-text">Abierto 24 horas</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="reviews-section">
+        <div class="container" style="max-width: 48rem;">
+            <div class="stars">
+                <span class="star">⭐</span>
+                <span class="star">⭐</span>
+                <span class="star">⭐</span>
+                <span class="star">⭐</span>
+                <span class="star">⭐</span>
+                <span class="rating-text">5/5</span>
+            </div>
+
+            <div class="testimonial" id="testimonial">
+                "Servicio impecable para nuestra boda. El sonido fue perfecto durante toda la ceremonia y la fiesta. ¡Muy profesionales!"
+            </div>
+
+            <p class="testimonial-author" id="author">María González</p>
+            <p class="testimonial-event" id="event">Boda en Elche</p>
+
+            <div class="testimonial-dots" id="dots"></div>
+
+            <p class="review-count">Basado en 127 reseñas verificadas</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <h3 class="footer-title">Audiomix Producciones</h3>
+            <p style="color: var(--gray-400); margin-bottom: 0.5rem;">
+                📧 <a href="mailto:producciones@audiomixelda.es" class="footer-email">producciones@audiomixelda.es</a>
+            </p>
+            <p class="footer-copyright">© 2024 Audiomix Producciones</p>
+        </div>
+    </footer>
+
+    <script>
+        // Testimonials data
+        const testimonials = [
+            {
+                name: "María González",
+                event: "Boda en Elche",
+                comment: "Servicio impecable para nuestra boda. El sonido fue perfecto durante toda la ceremonia y la fiesta. ¡Muy profesionales!"
+            },
+            {
+                name: "Carlos Martínez",
+                event: "Concierto en Alicante",
+                comment: "Contraté su servicio para un concierto y superaron todas las expectativas. Equipo de primera calidad y trato excelente."
+            },
+            {
+                name: "Ana Ruiz",
+                event: "Evento Corporativo",
+                comment: "Muy profesionales y puntuales. El montaje fue rápido y el resultado espectacular. Sin duda los recomendaré."
+            },
+            {
+                name: "Javier López",
+                event: "Festival en Elda",
+                comment: "Trabajamos con ellos en varios festivales. Siempre disponibles y con soluciones para cualquier imprevisto. 100% recomendable."
+            },
+            {
+                name: "Laura Sánchez",
+                event: "Graduación",
+                comment: "El equipo de iluminación que instalaron hizo que nuestro evento fuera mágico. Servicio de 10 y precio muy competitivo."
+            }
+        ];
+
+        let currentIndex = 0;
+
+        // Create dots
+        const dotsContainer = document.getElementById('dots');
+        testimonials.forEach((_, index) => {
+            const dot = document.createElement('div');
+            dot.className = 'dot' + (index === 0 ? ' active' : '');
+            dot.onclick = () => setTestimonial(index);
+            dotsContainer.appendChild(dot);
+        });
+
+        function setTestimonial(index) {
+            currentIndex = index;
+            const testimonial = testimonials[index];
+            
+            document.getElementById('testimonial').textContent = `"${testimonial.comment}"`;
+            document.getElementById('author').textContent = testimonial.name;
+            document.getElementById('event').textContent = testimonial.event;
+
+            // Update dots
+            document.querySelectorAll('.dot').forEach((dot, i) => {
+                dot.className = 'dot' + (i === index ? ' active' : '');
+            });
+        }
+
+        // Auto-rotate testimonials
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % testimonials.length;
+            setTestimonial(currentIndex);
+        }, 5000);
+
+        // Floating button on scroll
+        window.addEventListener('scroll', () => {
+            const floatingBtn = document.getElementById('floatingBtn');
+            if (window.scrollY > window.innerHeight * 0.8) {
+                floatingBtn.classList.add('show');
+            } else {
+                floatingBtn.classList.remove('show');
+            }
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
