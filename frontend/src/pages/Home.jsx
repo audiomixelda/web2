@@ -293,8 +293,7 @@ const Home = () => {
               <MapPin className="w-10 h-10 text-purple-400 mb-4" />
               <h3 className="text-xl font-bold text-white mb-2">Ubicación</h3>
               <p className="text-gray-400">
-                C. Pablo Iglesias, 106<br />
-                03600 Elda, Alicante
+                {companyInfo.address}
               </p>
             </div>
 
