@@ -317,20 +317,13 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Trust Section */}
+      {/* Trust Section - Only show if there are real reviews */}
+      {testimonials.length > 0 && (
       <section className="py-12 px-6 bg-zinc-900/50">
         <div className="container mx-auto max-w-3xl text-center">
-          <div className="flex justify-center items-center gap-1 mb-4">
-            {[...Array(5)].map((_, i) =>
-            <Star
-              key={i}
-              className="w-7 h-7 text-yellow-400 fill-yellow-400"
-            />
-            )}
-            <span className="ml-2 text-3xl font-bold text-white">
-              {companyInfo.rating}/5
-            </span>
-          </div>
+          <h3 className="text-2xl font-bold text-white mb-6">
+            Lo que dicen nuestros clientes
+          </h3>
           
           <div className="mb-4 min-h-[80px] flex items-center justify-center">
             <p className="text-gray-300 text-lg italic px-4 transition-opacity duration-500">
@@ -345,6 +338,7 @@ const Home = () => {
             {testimonials[currentTestimonialIndex].event}
           </p>
           
+          {testimonials.length > 1 && (
           <div className="flex justify-center gap-2 mt-4">
             {testimonials.map((_, index) => (
               <button
@@ -359,12 +353,10 @@ const Home = () => {
               />
             ))}
           </div>
-          
-          <small className="text-gray-500 block mt-4">
-            Basado en {companyInfo.reviews} reseñas verificadas
-          </small>
+          )}
         </div>
       </section>
+      )}
 
       {/* Footer */}
       <footer className="py-12 px-6 bg-black border-t border-purple-600/20">

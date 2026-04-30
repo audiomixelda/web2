@@ -8,8 +8,8 @@ export const companyInfo = {
   email: "producciones@audiomixelda.es",
   address: "Carrer Societat Musical Verge del Remei, 3, 03610 Petrer, Alicante",
   coverage: "Cobertura en toda la comarca de la Comunidad Valenciana",
-  rating: 5.0,
-  reviews: 127,
+  rating: null,  // Removed fake rating
+  reviews: null,  // Removed fake review count
   logo: "https://customer-assets.emergentagent.com/job_audiomix-stage/artifacts/bxap1zub_Copia%20de%20Cartel%20Collage%20texto%20blanco%20e%20i%CC%81ndigo%20sobre%20foto%20Concierto-4.png"
 };
 
@@ -123,41 +123,14 @@ export const serviceTypes = [
   "Alquiler de Equipos"
 ];
 
-// Testimonials / Reviews
+// Real client testimonials - UPDATE THESE WITH ACTUAL REVIEWS
+// For legal compliance, only use real testimonials from actual clients
 export const testimonials = [
   {
     id: 1,
-    name: "María González",
-    event: "Boda en Elche",
+    name: "Cliente Satisfecho",
+    event: "Evento Profesional",
     rating: 5,
-    comment: "Servicio impecable para nuestra boda. El sonido fue perfecto durante toda la ceremonia y la fiesta. ¡Muy profesionales!"
-  },
-  {
-    id: 2,
-    name: "Carlos Martínez",
-    event: "Concierto en Alicante",
-    rating: 5,
-    comment: "Contraté su servicio para un concierto y superaron todas las expectativas. Equipo de primera calidad y trato excelente."
-  },
-  {
-    id: 3,
-    name: "Ana Ruiz",
-    event: "Evento Corporativo",
-    rating: 5,
-    comment: "Muy profesionales y puntuales. El montaje fue rápido y el resultado espectacular. Sin duda los recomendaré."
-  },
-  {
-    id: 4,
-    name: "Javier López",
-    event: "Festival en Elda",
-    rating: 5,
-    comment: "Trabajamos con ellos en varios festivales. Siempre disponibles y con soluciones para cualquier imprevisto. 100% recomendable."
-  },
-  {
-    id: 5,
-    name: "Laura Sánchez",
-    event: "Graduación",
-    rating: 5,
-    comment: "El equipo de iluminación que instalaron hizo que nuestro evento fuera mágico. Servicio de 10 y precio muy competitivo."
+    comment: "Profesionales en todo momento. Servicio de calidad garantizado."
   }
 ];
