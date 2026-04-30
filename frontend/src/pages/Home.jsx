@@ -3,7 +3,7 @@ import { Button } from '../components/ui/button';
 import { ServiceCard } from '../components/ServiceCard';
 import { ContactForm } from '../components/ContactForm';
 import { LogoBanner } from '../components/LogoBanner';
-import { companyInfo, services, portfolioImages } from '../data/mock';
+import { companyInfo, services, portfolioImages, testimonials } from '../data/mock';
 import { useState, useEffect } from 'react';
 import { CustomCursor } from '../components/CustomCursor';
 
@@ -11,6 +11,7 @@ const Home = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [showFloatingButton, setShowFloatingButton] = useState(false);
   const [isInHero, setIsInHero] = useState(true);
+  const [currentTestimonialIndex, setCurrentTestimonialIndex] = useState(0);
 
   // Handle scroll for floating button and cursor effect
   useEffect(() => {
@@ -29,6 +30,14 @@ const Home = () => {
     handleScroll(); // Check initial position
 
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Rotate testimonials every 5 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentTestimonialIndex((prev) => (prev + 1) % testimonials.length);
+    }, 5000);
+    return () => clearInterval(interval);
   }, []);
   const handleCallClick = () => {
     window.location.href = `tel:${companyInfo.phone}`;
@@ -311,26 +320,50 @@ const Home = () => {
 
       {/* Trust Section */}
       <section className="py-12 px-6 bg-zinc-900/50">
-        <div className="container mx-auto max-w-2xl text-center">
-          <div className="flex justify-center items-center gap-1 mb-3">
+        <div className="container mx-auto max-w-3xl text-center">
+          <div className="flex justify-center items-center gap-1 mb-4">
             {[...Array(5)].map((_, i) =>
             <Star
               key={i}
-              className={`w-6 h-6 ${
-              i < Math.floor(companyInfo.rating) ?
-              'text-yellow-400 fill-yellow-400' :
-              'text-gray-600'}`
-              } />
-
+              className="w-7 h-7 text-yellow-400 fill-yellow-400"
+            />
             )}
-            <span className="ml-2 text-2xl font-bold text-white">
+            <span className="ml-2 text-3xl font-bold text-white">
               {companyInfo.rating}/5
             </span>
           </div>
-          <p className="text-gray-400 text-lg italic mb-2">
-            "Servicio rápido, disponible en cualquier momento"
+          
+          <div className="mb-4 min-h-[80px] flex items-center justify-center">
+            <p className="text-gray-300 text-lg italic px-4 transition-opacity duration-500">
+              "{testimonials[currentTestimonialIndex].comment}"
+            </p>
+          </div>
+          
+          <p className="text-purple-400 font-semibold mb-1">
+            {testimonials[currentTestimonialIndex].name}
           </p>
-          <small className="text-gray-500">({companyInfo.reviews} reseñas)</small>
+          <p className="text-gray-500 text-sm mb-3">
+            {testimonials[currentTestimonialIndex].event}
+          </p>
+          
+          <div className="flex justify-center gap-2 mt-4">
+            {testimonials.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentTestimonialIndex(index)}
+                className={`w-2 h-2 rounded-full transition-all ${
+                  index === currentTestimonialIndex 
+                    ? 'bg-purple-500 w-6' 
+                    : 'bg-gray-600 hover:bg-gray-500'
+                }`}
+                aria-label={`Ver reseña ${index + 1}`}
+              />
+            ))}
+          </div>
+          
+          <small className="text-gray-500 block mt-4">
+            Basado en {companyInfo.reviews} reseñas verificadas
+          </small>
         </div>
       </section>
 
